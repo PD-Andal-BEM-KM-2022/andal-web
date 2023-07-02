@@ -66,7 +66,7 @@ const Card = () => {
           <div className="absolute top-0 right-0 translate-x-full bg-andal-lightblue h-4 w-4 curved-border-r"></div>
         </div>
         <Image
-          src="/hero.png"
+          src="/images/hero.png"
           width={0}
           height={0}
           sizes="100%"

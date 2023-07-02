@@ -39,7 +39,7 @@ const KedirjenanCard = ({ name }: { name: string }) => {
           </div>
           <div className="w-full h-28 bg-red-500">
             <Image
-              src="/hero.png"
+              src="/images/hero.png"
               alt=""
               width={0}
               height={0}

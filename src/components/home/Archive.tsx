@@ -11,7 +11,7 @@ const Archive = () => {
         </p>
         <div className="relative h-[360px] border-8 border-andal-lightblue mx-4 mt-6 rounded-2xl pb-9 overflow-hidden">
           <Image
-            src="/hero.png"
+            src="/images/hero.png"
             width={0}
             height={0}
             sizes="100%"

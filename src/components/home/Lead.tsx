@@ -9,7 +9,7 @@ const Lead = () => {
         <div className="flex relative justify-center">
           <LeadBg />
           <Image
-            src="/lead.png"
+            src="/images/lead.png"
             width={0}
             height={0}
             sizes="100%"
