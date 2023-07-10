@@ -14,6 +14,7 @@ module.exports = {
         ss: ".9rem",
       },
       colors: {
+        "andal-light": "#EBEFF8",
         "andal-lightblue": "#CCDAE7",
         "andal-darkblue": "#040D21",
         "andal-lightgrey": "#94A0B8",

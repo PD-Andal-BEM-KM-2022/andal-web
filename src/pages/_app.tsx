@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <main
-        className={`${jakarta.variable} font-jakarta bg-andal-darkblue text-andal-lightblue`}
+        className={`${jakarta.variable} font-jakarta bg-andal-darkblue text-andal-lightblue overflow-hidden`}
       >
         <Component {...pageProps} />
       </main>

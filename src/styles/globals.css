@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  background-color: #f2f9ff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: #040d21;
+}
+
 .about-home::-webkit-scrollbar {
   width: 0.5em;
 }

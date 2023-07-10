@@ -7,40 +7,48 @@ import "swiper/css";
 
 import { Autoplay } from "swiper/modules";
 
-const CoreTeam = () => {
-  const coreTeams = [
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-    },
-  ];
-
+const Anggota = ({
+  kedirjenan,
+}: {
+  kedirjenan?: {
+    title: string;
+    members: {
+      name: string;
+      image: string;
+      prodi: string;
+    }[];
+  };
+}) => {
   return (
     <>
+      <style jsx>{`
+        .curved-border-l::after,
+        .curved-border-r::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 1rem;
+          width: 1rem;
+          background-color: #0000ff;
+        }
+
+        .curved-border-l::after {
+          border-radius: 0 16px 0 0;
+        }
+
+        .curved-border-r::after {
+          border-radius: 16px 0 0 0;
+        }
+      `}</style>
       <section
         className={`pt-[100px] lg:pt-36 bg-andal-lightblue overflow-hidden`}
       >
         <div className="pb-36 bg-andal-darkblue rounded-t-3xl lg:rounded-t-[48px] relative overflow-hidden">
           <h3
-            className={`font-extrabold flex justify-center text-center text-3xl py-16 whitespace-nowrap lg:text-5xl`}
+            className={`font-extrabold flex justify-center text-center text-3xl py-16 lg:text-5xl`}
           >
-            Our Core Team
+            Anggota Kedirjenan {kedirjenan?.title}
           </h3>
           <Swiper
             initialSlide={0}
@@ -79,12 +87,13 @@ const CoreTeam = () => {
             }}
             className="flex w-full"
           >
-            {coreTeams.map(({ name, prodi }, i) => (
-              <SwiperSlide key={i} className="pt-3">
-                <Card name={name} prodi={prodi} i={i} />
+            {kedirjenan?.members.map(({ name, prodi, image }, i) => (
+              <SwiperSlide className="pt-3">
+                <Card name={name} prodi={prodi} image={image} i={i} />
               </SwiperSlide>
             ))}
           </Swiper>
+
           <div
             className={`hidden lg:inline-block w-[1000px] h-[1000px] absolute top-0 -translate-y-[10%] left-0 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#072A79] via-transparent to-transparent duration-500`}
           ></div>
@@ -94,15 +103,17 @@ const CoreTeam = () => {
   );
 };
 
-export default CoreTeam;
+export default Anggota;
 
 const Card = ({
   name,
   prodi,
+  image,
   i,
 }: {
   name: string;
   prodi: string;
+  image: string;
   i: number;
 }) => {
   return (
@@ -146,20 +157,18 @@ const Card = ({
           </div>
         </div>
         <Image
-          src="/images/hero.png"
+          src={`/images/${image}`}
           width={0}
           height={0}
           sizes="100%"
           quality={100}
           alt=""
-          className="h-[400px] w-auto object-cover rounded-xl overflow-hidden"
+          className="h-[400px] w-full object-cover rounded-xl bg-andal-button-orange overflow-hidden md:h-[480px]"
         />
         <div className="flex justify-between bg-andal-lightblue px-3 pt-3 pb-2 items-center">
           <div className="text-andal-darkblue text-ss">
-            <h5 className="font-extrabold leading-tight">
-              Raden Restu Akbar Bagus Pratama
-            </h5>
-            <h6>Ilmu Komputer 2021</h6>
+            <h5 className="font-extrabold leading-tight">{name}</h5>
+            <h6>{prodi}</h6>
           </div>
           <div className="scale-[1.75]">
             <LinkedIn />

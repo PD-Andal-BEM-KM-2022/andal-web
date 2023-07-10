@@ -5,7 +5,7 @@ function HeroBg({ flip }: { flip: boolean }) {
       height={96}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={flip ? "-scale-x-100" : ""}
+      className={`${flip ? "-scale-x-100" : ""}`}
     >
       <path
         fillRule="evenodd"

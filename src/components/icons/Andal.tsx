@@ -70,9 +70,9 @@ const Andal = ({ className }: { className: string }) => {
           y2={156.522}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#061648" />
-          <stop offset={0.217} stopColor="#112A7D" />
-          <stop offset={1} stopColor="#0152CC" />
+          <stop stop-color="#061648" />
+          <stop offset={0.217} stop-color="#112A7D" />
+          <stop offset={1} stop-color="#0152CC" />
         </linearGradient>
         <linearGradient
           id="prefix__paint1_linear_437_12756"
@@ -82,9 +82,9 @@ const Andal = ({ className }: { className: string }) => {
           y2={175.652}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F5E45F" />
-          <stop offset={0.401} stopColor="#E3B326" />
-          <stop offset={0.979} stopColor="#D86D0B" />
+          <stop stop-color="#F5E45F" />
+          <stop offset={0.401} stop-color="#E3B326" />
+          <stop offset={0.979} stop-color="#D86D0B" />
         </linearGradient>
         <linearGradient
           id="prefix__paint2_linear_437_12756"
@@ -94,9 +94,9 @@ const Andal = ({ className }: { className: string }) => {
           y2={180.224}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F5E45F" />
-          <stop offset={0.401} stopColor="#E3B326" />
-          <stop offset={1} stopColor="#D86D0B" />
+          <stop stop-color="#F5E45F" />
+          <stop offset={0.401} stop-color="#E3B326" />
+          <stop offset={1} stop-color="#D86D0B" />
         </linearGradient>
         <linearGradient
           id="prefix__paint3_linear_437_12756"
@@ -106,9 +106,9 @@ const Andal = ({ className }: { className: string }) => {
           y2={210.786}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F5E45F" />
-          <stop offset={0.401} stopColor="#E3B326" />
-          <stop offset={1} stopColor="#D86D0B" />
+          <stop stop-color="#F5E45F" />
+          <stop offset={0.401} stop-color="#E3B326" />
+          <stop offset={1} stop-color="#D86D0B" />
         </linearGradient>
         <linearGradient
           id="prefix__paint4_linear_437_12756"
@@ -118,9 +118,9 @@ const Andal = ({ className }: { className: string }) => {
           y2={218.006}
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F5E45F" />
-          <stop offset={0.401} stopColor="#E3B326" />
-          <stop offset={0.995} stopColor="#D86D0B" />
+          <stop stop-color="#F5E45F" />
+          <stop offset={0.401} stop-color="#E3B326" />
+          <stop offset={0.995} stop-color="#D86D0B" />
         </linearGradient>
         <linearGradient
           id="prefix__paint7_linear_437_12756"
@@ -130,9 +130,9 @@ const Andal = ({ className }: { className: string }) => {
           y2={234.94}
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0.089} stopColor="#3076FF" />
-          <stop offset={0.411} stopColor="#024FC6" />
-          <stop offset={1} stopColor="#0D2267" />
+          <stop offset={0.089} stop-color="#3076FF" />
+          <stop offset={0.411} stop-color="#024FC6" />
+          <stop offset={1} stop-color="#0D2267" />
         </linearGradient>
         <radialGradient
           id="prefix__paint5_radial_437_12756"
@@ -142,11 +142,11 @@ const Andal = ({ className }: { className: string }) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(-199.0711 92.2242 -201.69094 -435.36119 228.339 101.475)"
         >
-          <stop stopColor="#FFFAD0" />
-          <stop offset={0.244} stopColor="#F1DC3A" />
-          <stop offset={0.585} stopColor="#DCA11D" />
-          <stop offset={0.824} stopColor="#E0710B" />
-          <stop offset={1} stopColor="#9E4E04" />
+          <stop stop-color="#FFFAD0" />
+          <stop offset={0.244} stop-color="#F1DC3A" />
+          <stop offset={0.585} stop-color="#DCA11D" />
+          <stop offset={0.824} stop-color="#E0710B" />
+          <stop offset={1} stop-color="#9E4E04" />
         </radialGradient>
         <radialGradient
           id="prefix__paint6_radial_437_12756"
@@ -156,11 +156,11 @@ const Andal = ({ className }: { className: string }) => {
           gradientUnits="userSpaceOnUse"
           gradientTransform="matrix(-199.0711 92.2242 -201.69094 -435.36119 228.339 101.475)"
         >
-          <stop stopColor="#FFFAD0" />
-          <stop offset={0.244} stopColor="#F1DC3A" />
-          <stop offset={0.585} stopColor="#DCA11D" />
-          <stop offset={0.885} stopColor="#E0710B" />
-          <stop offset={1} stopColor="#9E4E04" />
+          <stop stop-color="#FFFAD0" />
+          <stop offset={0.244} stop-color="#F1DC3A" />
+          <stop offset={0.585} stop-color="#DCA11D" />
+          <stop offset={0.885} stop-color="#E0710B" />
+          <stop offset={1} stop-color="#9E4E04" />
         </radialGradient>
         <filter
           id="prefix__filter0_d_437_12756"
@@ -169,9 +169,9 @@ const Andal = ({ className }: { className: string }) => {
           width={275.179}
           height={158.479}
           filterUnits="userSpaceOnUse"
-          colorInterpolationFilters="sRGB"
+          color-interpolation-filters="sRGB"
         >
-          <feFlood floodOpacity={0} result="BackgroundImageFix" />
+          <feFlood flood-opacity={0} result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"

@@ -3,13 +3,7 @@ import AboutHero from "@/components/about/AboutHero";
 import CoreTeam from "@/components/about/CoreTeam";
 
 const KedirjenanPage = () => {
-  return (
-    <>
-      <AboutHero />
-      <CoreTeam kedirjenan />
-      <Footer />
-    </>
-  );
+  return <></>;
 };
 
 export default KedirjenanPage;

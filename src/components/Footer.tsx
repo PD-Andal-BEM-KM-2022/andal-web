@@ -6,7 +6,7 @@ import Twitter from "./icons/Twitter";
 const Footer = () => {
   return (
     <>
-      <footer className="mx-4 -translate-y-4 bg-andal-lightblue py-6 px-4 text-andal-darkblue rounded-lg lg:px-20 lg:py-12 lg:grid lg:grid-cols-[2fr_auto]">
+      <footer className="mx-4 -translate-y-4 bg-andal-lightblue py-6 px-4 text-andal-darkblue rounded-lg lg:gap-x-10 lg:px-20 lg:py-12 lg:grid lg:grid-cols-[2fr_auto]">
         <div className="">
           <h3 className="text-xl lg:text-3xl font-extrabold leading-none lg:inline">
             Kementrian Analisis Data dan Produk Digital

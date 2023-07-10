@@ -6,12 +6,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex justify-between fixed z-50 w-full h-full p-6">
+      <nav className="flex justify-between fixed z-50 w-full p-6 lg:grid lg:grid-cols-[0.8fr_1.2fr_0.8fr]">
         {/* NAVBAR BUTTONS */}
-        <Link href="/">
+        <Link href="/" className="h-fit">
           <button
             type="button"
-            className={`bg-andal-lightblue rounded-full p-1 border border-andal-lightgreyblue aspect-square w-8 h-8 grid place-content-center duration-1000 ${
+            className={`bg-andal-lightblue rounded-full p-1 border border-andal-lightgreyblue w-8 h-8 flex items-center justify-center shadow-md lg:w-auto lg:h-auto lg:px-6 lg:py-3 lg:gap-x-1 duration-1000 ${
               navMenu ? "-translate-y-[200%]" : ""
             }`}
           >
@@ -21,11 +21,11 @@ const Navbar = () => {
               viewBox="0 0 262 248"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-4 h-4"
+              className="w-4 h-4 lg:w-6 lg:h-6"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M157.052 15.0438C145.476 -5.01478 116.524 -5.01474 104.948 15.0438L4.0726 189.824C-7.5013 209.877 6.9713 234.94 30.125 234.94H42.7292L40.8794 227.33L111.327 177.457L188.212 162.357V210.545C188.212 226.066 194.589 234.91 209.027 234.91L209.037 234.94H231.875C255.029 234.94 269.501 209.877 257.927 189.824L157.052 15.0438Z"
                 fill="url(#paint0_linear_437_12756)"
               />
@@ -72,8 +72,8 @@ const Navbar = () => {
                 />
               </g>
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M157.415 15.0439C145.838 -5.01466 116.887 -5.01463 105.31 15.0439L4.43492 189.824C-7.13898 209.878 7.33362 234.94 30.4873 234.94H73.5419C52.2163 232.838 39.5202 209.123 50.5708 189.975L128.471 54.9938C139.643 35.6362 166.995 34.9589 179.299 52.9618L157.415 15.0439Z"
                 fill="url(#paint7_linear_437_12756)"
               />
@@ -215,12 +215,32 @@ const Navbar = () => {
                 </linearGradient>
               </defs>
             </svg>
+            <span className="hidden lg:inline-block font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#3076FF] to-[#0D2268]">
+              Andal
+            </span>
           </button>
         </Link>
+
+        <div className="hidden lg:flex items-center justify-center rounded-full bg-andal-lightblue w-fit py-3 px-10 gap-x-7 shadow-md mx-auto">
+          <Link href="/about">
+            <button className="text-andal-darkblue font-medium">
+              About Us
+            </button>
+          </Link>
+          <Link href="/kedirjenan/produkdigital">
+            <button className="text-andal-darkblue font-medium">
+              Kedirjenan
+            </button>
+          </Link>
+          <Link href="/archive">
+            <button className="text-andal-darkblue font-medium">Archive</button>
+          </Link>
+        </div>
+
         <button
           type="button"
           onClick={() => setNavMenu(!navMenu)}
-          className={`bg-andal-lightblue rounded-full p-1 border border-andal-lightgreyblue aspect-square w-8 h-8 grid place-content-center duration-1000 ${
+          className={`bg-andal-lightblue rounded-full p-1 border border-andal-lightgreyblue aspect-square w-8 h-8 grid place-content-center lg:hidden duration-1000 ${
             navMenu ? "-translate-y-[200%]" : ""
           }`}
         >
@@ -235,9 +255,9 @@ const Navbar = () => {
             <path
               d="M1.4375 11.375H14.5625M1.4375 6.375H14.5625M1.4375 1.375H14.5625"
               stroke="#040D21"
-              stroke-width="1.875"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.875"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
@@ -330,52 +350,52 @@ const Navbar = () => {
               <path
                 d="M87.7424 45.1627C87.7424 52.3981 81.8769 58.2636 74.6415 58.2636C67.406 58.2636 61.5406 52.3981 61.5406 45.1627L61.5406 32.0618L74.6415 32.0618C81.8769 32.0618 87.7424 37.9273 87.7424 45.1627Z"
                 stroke="#F9B20B"
-                stroke-width="4.03726"
+                strokeWidth="4.03726"
               />
               <path
                 d="M91.7796 45.1627C91.7796 52.3981 97.6451 58.2636 104.881 58.2636C112.116 58.2636 117.981 52.3981 117.981 45.1627L117.981 32.0618L104.881 32.0618C97.6451 32.0618 91.7796 37.9273 91.7796 45.1627Z"
                 stroke="#F9B20B"
-                stroke-width="4.03726"
+                strokeWidth="4.03726"
               />
               <path
                 d="M87.7424 75.4017C87.7424 68.1663 81.8769 62.3009 74.6415 62.3009C67.406 62.3009 61.5406 68.1663 61.5406 75.4017L61.5406 88.5026L74.6415 88.5026C81.8769 88.5026 87.7424 82.6372 87.7424 75.4017Z"
                 stroke="#F9B20B"
-                stroke-width="4.03726"
+                strokeWidth="4.03726"
               />
               <path
                 d="M91.7796 75.4017C91.7796 68.1663 97.6451 62.3009 104.881 62.3009C112.116 62.3009 117.981 68.1663 117.981 75.4017L117.981 88.5026L104.881 88.5026C97.6451 88.5026 91.7796 82.6372 91.7796 75.4017Z"
                 stroke="#F9B20B"
-                stroke-width="4.03726"
+                strokeWidth="4.03726"
               />
               <path
                 d="M57.5353 106.358C57.5353 99.2375 51.7625 93.4647 44.6415 93.4647C37.5205 93.4647 31.7478 99.2375 31.7478 106.358L31.7478 119.252L44.6415 119.252C51.7625 119.252 57.5353 113.48 57.5353 106.358Z"
                 stroke="#F9B20B"
-                stroke-width="3.97342"
+                strokeWidth="3.97342"
               />
               <path
                 d="M57.5353 136.12C57.5353 143.241 51.7625 149.013 44.6415 149.013C37.5205 149.013 31.7478 143.241 31.7478 136.12L31.7478 123.226L44.6415 123.226C51.7625 123.226 57.5353 128.999 57.5353 136.12Z"
                 stroke="#F9B20B"
-                stroke-width="3.97342"
+                strokeWidth="3.97342"
               />
               <path
                 d="M1.98671 106.358C1.98671 99.2375 7.75944 93.4647 14.8805 93.4647C22.0015 93.4647 27.7742 99.2375 27.7742 106.358L27.7742 119.252L14.8805 119.252C7.75944 119.252 1.98671 113.48 1.98671 106.358Z"
                 stroke="#F9B20B"
-                stroke-width="3.97342"
+                strokeWidth="3.97342"
               />
               <path
                 d="M1.98671 136.12C1.98671 143.241 7.75944 149.013 14.8805 149.013C22.0015 149.013 27.7742 143.241 27.7742 136.12L27.7742 123.226L14.8805 123.226C7.75944 123.226 1.98671 128.999 1.98671 136.12Z"
                 stroke="#F9B20B"
-                stroke-width="3.97342"
+                strokeWidth="3.97342"
               />
               <path
                 d="M117.209 15.4022C117.209 8.39554 111.529 2.71554 104.522 2.71554C97.5153 2.71554 91.8353 8.39554 91.8353 15.4022L91.8353 28.0888L104.522 28.0888C111.529 28.0888 117.209 22.4088 117.209 15.4022Z"
                 stroke="#F9B20B"
-                stroke-width="3.9096"
+                strokeWidth="3.9096"
               />
               <path
                 d="M110.067 15.4023C110.067 12.3398 107.585 9.85714 104.522 9.85714C101.46 9.85714 98.977 12.3398 98.977 15.4023L98.977 20.9474L104.522 20.9474C107.585 20.9474 110.067 18.4647 110.067 15.4023Z"
                 stroke="#F9B20B"
-                stroke-width="3.9096"
+                strokeWidth="3.9096"
               />
             </svg>
           </div>
