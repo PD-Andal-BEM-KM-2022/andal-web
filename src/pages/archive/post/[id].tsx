@@ -2,11 +2,19 @@ import { useRouter } from "next/router";
 import { archives } from "..";
 import Image from "next/image";
 import Link from "next/link";
+import { GetServerSideProps } from "next";
 
-const PostID = () => {
-  const router = useRouter();
-  const id = parseInt(router.query.id as string, 10);
-  const archive = archives[id - 1];
+// {
+//   thumbnail: string;
+//   title: string;
+//   description: string;
+//   initiator: string;
+//   date: string;
+//   pictures: string[];
+// }
+
+const PostID = (props: any) => {
+  const archive = props;
 
   return (
     <>
@@ -65,3 +73,29 @@ const PostID = () => {
 };
 
 export default PostID;
+
+import * as contentful from "contentful";
+
+export const getServerSideProps: GetServerSideProps = async (context: any) => {
+  const { id } = context.params;
+
+  const client = contentful.createClient({
+    space: process.env.CONTENTFUL_SPACE_ID as string,
+
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+  });
+
+  try {
+    const data = await client.getEntry(id);
+
+    return {
+      props: {
+        ...data.fields,
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
+};
