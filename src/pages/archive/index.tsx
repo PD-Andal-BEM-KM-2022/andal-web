@@ -10,7 +10,7 @@ export const archives = [
     id: 1,
     title:
       "Kunjungan Kementrian Riset dan Data BEM UNS ke Kementrian Analisis Data dan Produk Digital BEM KM UGM",
-    author: "Kedirjenan Blabla",
+    author: "Kedirjenan Produk Digital",
     date: "May 17, 2023",
     photos: [
       "post1-1.png",
@@ -26,7 +26,7 @@ export const archives = [
   {
     id: 2,
     title: "2 You are a restaurant owner looking to grow your business",
-    author: "2 Kedirjenan Blabla",
+    author: "Kedirjenan Riset Spasial",
     date: "2 May 17, 2023",
     photos: ["hero.png", "hero.png"],
     content:
@@ -35,7 +35,7 @@ export const archives = [
   {
     id: 3,
     title: "3 You are a restaurant owner looking to grow your business",
-    author: "3 Kedirjenan Blabla",
+    author: "Kedirjenan Riset Spasial",
     date: "3 May 17, 2023",
     photos: ["hero.png", "hero.png"],
     content:
@@ -44,7 +44,7 @@ export const archives = [
   {
     id: 4,
     title: "4 You are a restaurant owner looking to grow your business",
-    author: "4 Kedirjenan Blabla",
+    author: "Kedirjenan Media",
     date: "4 May 17, 2024",
     photos: ["hero.png", "hero.png"],
     content:

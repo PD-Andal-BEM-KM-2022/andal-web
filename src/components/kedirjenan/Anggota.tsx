@@ -88,7 +88,7 @@ const Anggota = ({
             className="flex w-full"
           >
             {kedirjenan?.members.map(({ name, prodi, image }, i) => (
-              <SwiperSlide className="pt-3">
+              <SwiperSlide key={i} className="pt-3">
                 <Card name={name} prodi={prodi} image={image} i={i} />
               </SwiperSlide>
             ))}

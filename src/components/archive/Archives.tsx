@@ -25,18 +25,25 @@ const Archives = ({
 }) => {
   const kedirjenans = [
     "semua kedirjenan",
-    "kedirjenan a",
-    "kedirjenan b",
-    "kedirjenan c",
-    "kedirjenan d",
-    "kedirjenan e",
+    "kedirjenan humas",
+    "kedirjenan media",
+    "kedirjenan personalia",
+    "kedirjenan produk digital",
+    "kedirjenan riset data",
+    "kedirjenan riset spasial",
   ];
   const [showDirjens, setShowDirjens] = useState(false);
-  const [selectedDirjen, setSelectedDirjen] = useState(0);
+  const [selectedDirjen, setSelectedDirjen] = useState("semua kedirjenan");
+  const [countContent, setCountContent] = useState(0);
   const [scroll, setScroll] = useState(0);
 
-  const handleSelectDirjen = (i: number) => {
-    setSelectedDirjen(i);
+  const handleSelectDirjen = (
+    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+  ) => {
+    const target = e.target as HTMLElement;
+    const text = target.innerText;
+    // console.log(text);
+    setSelectedDirjen(text.toLowerCase());
     setShowDirjens(false);
   };
 
@@ -55,7 +62,9 @@ const Archives = ({
 
   return (
     <>
-      <section className="bg-andal-darkblue -mt-7 py-16 rounded-t-3xl relative lg:px-14 xl:px-28">
+      <section
+        className={`bg-andal-darkblue -mt-7 py-16 rounded-t-3xl relative lg:px-14 xl:px-28`}
+      >
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-andal-yellow rounded-full px-6 py-3 w-[280px] border border-[#ac7904] flex items-center gap-x-4 sm:w-[360px] lg:w-[calc(100%-7rem)] xl:w-[calc(100%-14rem)]">
           <svg
             width="20"
@@ -81,6 +90,7 @@ const Archives = ({
             placeholder="Search"
           />
         </div>
+        {/* PILIH KEDIRJENAN - MOBILE */}
         <div className="relative w-full container mx-auto px-8">
           <div
             className="text-ss text-andal-darkblue bg-andal-light flex items-center justify-between px-4 py-2 rounded-lg cursor-pointer active:bg-[#DADEE7] max-w-[360px] mx-auto lg:hidden"
@@ -91,7 +101,7 @@ const Archives = ({
                 className={`w-2 h-2 rounded-full border border-andal-darkblue bg-andal-darkblue`}
               ></span>
               <span className="font-medium capitalize">
-                Filter: {kedirjenans[selectedDirjen]}
+                Filter: {selectedDirjen}
               </span>
             </div>
             <div className="font-extrabold tracking-widest flex gap-x-1 items-center -mr-2">
@@ -140,27 +150,26 @@ const Archives = ({
             }`}
           >
             {kedirjenans.map((kedirjenan, i) => (
-              <div
+              <button
                 key={i}
                 className="flex items-center gap-x-2"
-                onClick={() => handleSelectDirjen(i)}
+                onClick={(e) => handleSelectDirjen(e)}
               >
                 <div
                   className={`w-2 h-2 rounded-full border border-andal-darkblue cursor-pointer ${
-                    selectedDirjen == i ? "bg-andal-darkblue" : ""
+                    selectedDirjen == kedirjenan ? "bg-andal-darkblue" : ""
                   }`}
                 ></div>
-                <label htmlFor="dirjen" className="capitalize cursor-pointer">
-                  {kedirjenan}
-                </label>
-              </div>
+                <div className="capitalize cursor-pointer">{kedirjenan}</div>
+              </button>
             ))}
           </div>
         </div>
+        {/* PILIH KEDIRJENAN - DESKTOP */}
         <div className="hidden lg:flex bg-andal-lightblue w-full px-8 py-6 rounded-t-2xl overflow-hidden gap-x-4">
           {/* BUTTON MASI NGEBUG BANGETZ */}
           <button
-            className="flex items-center"
+            className="flex justify-start items-center w-[3%]"
             onClick={() => setScroll((scroll) => scroll - 1)}
           >
             <svg
@@ -179,17 +188,17 @@ const Archives = ({
               />
             </svg>
           </button>
-          <div className="overflow-hidden" id="cat-scroll">
+          <div className="overflow-hidden w-[94%]" id="cat-scroll">
             <div className={`flex gap-x-4 duration-500`}>
               {kedirjenans.map((kedirjenan, i) => (
                 <button
                   key={i}
                   className={`px-6 py-2 rounded-lg text-lg whitespace-nowrap duration-500 capitalize ${
-                    selectedDirjen == i
+                    selectedDirjen == kedirjenan
                       ? "bg-andal-button-orange text-andal-darkblue"
                       : "bg-andal-darkblue"
                   }`}
-                  // onClick={() => setSelectedDirjen(i)}
+                  onClick={(e) => handleSelectDirjen(e)}
                 >
                   {kedirjenan}
                 </button>
@@ -197,7 +206,7 @@ const Archives = ({
             </div>
           </div>
           <button
-            className="flex items-center"
+            className="flex justify-end items-center w-[3%]"
             onClick={() => setScroll((scroll) => scroll + 1)}
           >
             <svg
@@ -216,16 +225,22 @@ const Archives = ({
             </svg>
           </button>
         </div>
-        <div className="pt-7 pb-12 mx-8 sm:flex sm:flex-wrap sm:justify-center sm:gap-7 lg:bg-[#112A7C]/50 lg:grid lg:grid-cols-2  xl:grid-cols-3 lg:place-items-center lg:p-9 lg:rounded-b-2xl lg:mx-auto">
-          {archives.map((archive, i) => (
-            <Card
-              key={i}
-              index={i}
-              archive={archive}
-              showContent={showContent}
-              setShowContent={setShowContent}
-            />
-          ))}
+        <div className="pt-7 pb-12 mx-8 flex flex-wrap justify-center gap-y-7 gap-7 lg:bg-[#112A7C]/50 lg:grid lg:grid-cols-2  xl:grid-cols-3 lg:place-items-center lg:p-9 lg:rounded-b-2xl lg:mx-auto">
+          {archives.map((archive, i) =>
+            archive["author"].toLowerCase() == selectedDirjen ||
+            selectedDirjen == "semua kedirjenan" ? (
+              <Card
+                key={i}
+                index={i}
+                archive={archive}
+                showContent={showContent}
+                setShowContent={setShowContent}
+                setCountContent={setCountContent}
+              />
+            ) : (
+              <></>
+            )
+          )}
         </div>
       </section>
     </>
@@ -238,11 +253,13 @@ const Card = ({
   index,
   showContent,
   setShowContent,
+  setCountContent,
   archive,
 }: {
   index: number;
   showContent: number;
   setShowContent: Dispatch<SetStateAction<number>>;
+  setCountContent: Dispatch<SetStateAction<number>>;
   archive: {
     id: number;
     title: string;
@@ -255,8 +272,9 @@ const Card = ({
   return (
     <>
       <div
-        className="relative border-8 border-andal-lightblue rounded-xl bg-andal-lightblue max-w-[360px] mx-auto lg:mt-auto xl:max-w-none xl:w-full group"
+        className="relative border-8 border-andal-lightblue rounded-xl bg-andal-lightblue max-w-[360px] mx-auto lg:mt-auto xl:max-w-none xl:w-full cursor-pointer group"
         onClick={() => setShowContent(archive.id)}
+        onLoad={() => setCountContent(1)}
       >
         <div className="h-[400px]">
           <Image
@@ -291,7 +309,7 @@ const Card = ({
       {/* ARCHIVE CONTENT */}
       {/* MOBILE */}
       <div
-        className={`fixed top-0 left-0 z-[60] h-screen bg-andal-darkblue overflow-auto lg:hidden duration-1000 ${
+        className={`fixed top-0 left-0 z-[60] h-full w-full bg-andal-darkblue overflow-y-auto overflow-x-clip lg:hidden duration-1000 ${
           showContent == archive.id
             ? ""
             : "translate-y-full pointer-events-none"
@@ -355,7 +373,7 @@ const Card = ({
 
       {/* DESKTOP */}
       <div
-        className={`hidden lg:inline-block h-screen fixed inset-0 bg-andal-lightblue z-[60] overflow-hidden duration-1000 ${
+        className={`hidden lg:inline-block h-screen fixed top-0 left-0 bg-andal-lightblue z-[60] overflow-hidden duration-1000 ${
           showContent == archive.id ? "" : "translate-y-full"
         }`}
       >

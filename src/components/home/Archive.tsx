@@ -32,8 +32,8 @@ const Archive = () => {
 
   return (
     <>
-      <section className="pt-12 container mx-auto overflow-x-clip overflow-y-visible relative z-10 lg:overflow-visible">
-        <div className="lg:flex lg:ml-4 lg:items-end relative z-10">
+      <section className="pt-12 overflow-x-clip overflow-y-visible relative z-10 lg:overflow-visible">
+        <div className="lg:flex lg:ml-4 lg:items-end relative z-10 ">
           <h2 className="text-[2rem] font-extrabold text-center lg:text-5xl">
             Archive
           </h2>
@@ -88,10 +88,11 @@ const Archive = () => {
               },
             },
           }}
-          className="flex"
+          className="flex "
         >
           {content.map((content, i) => (
             <SwiperSlide
+              key={i}
               className={`duration-1000 ${
                 active == i ? "lg:flex-grow-[2]" : "lg:flex-shrink-[2]"
               }`}
