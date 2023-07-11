@@ -58,7 +58,9 @@ const PostID = (archive: {
                 {archive.description}
               </p>
               <div className="flex justify-between items-center mt-4">
-                {/* <span className="font-medium">{archive.initiator}</span> */}
+                <span className="font-medium">
+                  {archive.initiator[0].position}
+                </span>
                 <span className="font-medium">{archive.date}</span>
               </div>
             </div>
@@ -86,7 +88,7 @@ const PostID = (archive: {
             <h2>{archive.title}</h2>
             <p>{archive.description}</p>
             <div className="flex justify-between">
-              {/* <h5>{archive.initiator}</h5> */}
+              <h5>{archive.initiator[0].position}</h5>
               <h5>{archive.date}</h5>
             </div>
           </div>

@@ -298,7 +298,9 @@ const Card = ({
               {archive.title}
             </h5>
             <div className="flex justify-between items-start mt-4 lg:mt-3">
-              {/* <h6 className="text-xs font-bold">{archive.initiator.}</h6> */}
+              <h6 className="text-xs font-bold">
+                {archive.initiator[0].position}
+              </h6>
               <h6 className="text-xs lg:flex">
                 {dayjs(archive.date).format("DD MMM YYYY")}
               </h6>
@@ -426,7 +428,7 @@ const Card = ({
               </p>
             </div>
             <div className="flex justify-between mb-14 text-lg font-medium">
-              {/* <span>{archive.author}</span> */}
+              <span>{archive.initiator[0].position}</span>
               <span>{dayjs(archive.date).format("DD MMM YYYY")}</span>
             </div>
           </div>
