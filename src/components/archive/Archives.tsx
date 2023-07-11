@@ -10,27 +10,31 @@ import {
 import Link from "next/link";
 import HeroBg from "../icons/about/HeroBg";
 import ArchiveCarousel from "./ArchiveCarousel";
+import dayjs from "dayjs";
 
 const Archives = ({
   archives,
 }: {
-  archives: {
-    id: number;
-    title: string;
-    author: string;
-    date: string;
-    photos: string[];
-    content: string;
-  }[];
+  archives: any;
+
+  // {
+  //   id: string;
+  //   title: string;
+  //   initiator: any;
+  //   date: string;
+  //   pictures: any;
+  //   thumbnail: any;
+  //   description: string;
+  // }[];
 }) => {
   const kedirjenans = [
     "semua kedirjenan",
-    "kedirjenan humas",
-    "kedirjenan media",
-    "kedirjenan personalia",
-    "kedirjenan produk digital",
-    "kedirjenan riset data",
-    "kedirjenan riset spasial",
+    "humas",
+    "media",
+    "personalia",
+    "produk digital",
+    "riset data",
+    "riset spasial",
   ];
   const [showDirjens, setShowDirjens] = useState(false);
   const [selectedDirjen, setSelectedDirjen] = useState("semua kedirjenan");
@@ -226,8 +230,8 @@ const Archives = ({
           </button>
         </div>
         <div className="pt-7 pb-12 mx-8 flex flex-wrap justify-center gap-y-7 gap-7 lg:bg-[#112A7C]/50 lg:grid lg:grid-cols-2  xl:grid-cols-3 lg:place-items-center lg:p-9 lg:rounded-b-2xl lg:mx-auto">
-          {archives.map((archive, i) =>
-            archive["author"].toLowerCase() == selectedDirjen ||
+          {archives.map((archive: any, i: number) =>
+            archive.initiator[0].position.toLowerCase() == selectedDirjen ||
             selectedDirjen == "semua kedirjenan" ? (
               <Card
                 key={i}
@@ -260,14 +264,15 @@ const Card = ({
   showContent: number;
   setShowContent: Dispatch<SetStateAction<number>>;
   setCountContent: Dispatch<SetStateAction<number>>;
-  archive: {
-    id: number;
-    title: string;
-    author: string;
-    date: string;
-    photos: string[];
-    content: string;
-  };
+  archive: any;
+  // {
+  //   id: number;
+  //   title: string;
+  //   author: string;
+  //   date: string;
+  //   photos: string[];
+  //   content: string;
+  // };
 }) => {
   return (
     <>
@@ -278,12 +283,12 @@ const Card = ({
       >
         <div className="h-[400px]">
           <Image
-            src={`/images/${archive.photos[0]}`}
+            src={`https:${archive.thumbnail.file.url}`}
             width={0}
             height={0}
             sizes="100%"
             quality={100}
-            alt=""
+            alt={archive.thumbnail.title}
             className="h-full w-full object-cover rounded-xl overflow-hidden"
           />
         </div>
@@ -293,11 +298,13 @@ const Card = ({
               {archive.title}
             </h5>
             <div className="flex justify-between items-start mt-4 lg:mt-3">
-              <h6 className="text-xs font-bold">{archive.author}</h6>
-              <h6 className="text-xs lg:flex">{archive.date}</h6>
+              {/* <h6 className="text-xs font-bold">{archive.initiator.}</h6> */}
+              <h6 className="text-xs lg:flex">
+                {dayjs(archive.date).format("DD MMM YYYY")}
+              </h6>
             </div>
             <p className="hidden lg:inline-block mt-5 leading-tight line-clamp-2 h-0 duration-500 group-hover:h-9">
-              {archive.content}
+              {archive.description}
             </p>
           </div>
           <button className="hidden lg:block bg-andal-button-orange py-3 w-full rounded-md font-medium text-andal-button-orange h-0 opacity-0 duration-500 group-hover:text-andal-darkblue group-hover:h-12 group-hover:opacity-100">
@@ -346,22 +353,22 @@ const Card = ({
             {archive.title}
           </h2>
           <div className="relative w-auto flex justify-start gap-x-4 h-[320px] mt-4 p-2">
-            {archive.photos.map((img, i) => (
+            {archive.pictures.map((img: any, i: number) => (
               <Image
                 key={i}
-                src={`/images/${img}`}
+                src={`https:${img.file.url}`}
                 width={0}
                 height={0}
                 sizes="100%"
                 quality={100}
-                alt=""
+                alt={img.title}
                 className="w-auto h-full object-cover rounded-lg"
               />
             ))}
           </div>
           <div className="text-ss relative text-andal-darkblue bg-andal-lightblue rounded-lg px-3 py-4 mt-6">
             <p className="leading-tight text-justify max-h-[270px] overflow-auto pr-2 about-home">
-              {archive.content}
+              {archive.description}
             </p>
             <div className="flex justify-between items-center mt-4">
               <span className="font-medium">{archive.author}</span>
@@ -396,7 +403,7 @@ const Card = ({
         </button>
 
         <div className="grid grid-cols-2 text-andal-darkblue w-full h-full relative z-10 px-24 2xl:px-40 py-14 gap-x-12">
-          <ArchiveCarousel images={archive.photos} />
+          {/* <ArchiveCarousel images={archive.photos} /> */}
           {/* <div className="w-full h-full">
             {archive.photos.map((photo, i) => (
                 <Image
@@ -415,13 +422,12 @@ const Card = ({
                 {archive.title}
               </h2>
               <p className="font-medium text-justify pr-4 overflow-auto flex-1">
-                {archive.content}
-                {archive.content}
+                {archive.description}
               </p>
             </div>
             <div className="flex justify-between mb-14 text-lg font-medium">
-              <span>{archive.author}</span>
-              <span>{archive.date}</span>
+              {/* <span>{archive.author}</span> */}
+              <span>{dayjs(archive.date).format("DD MMM YYYY")}</span>
             </div>
           </div>
         </div>

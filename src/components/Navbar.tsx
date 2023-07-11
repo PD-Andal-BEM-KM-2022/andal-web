@@ -87,7 +87,7 @@ const Navbar = () => {
                   filterUnits="userSpaceOnUse"
                   color-interpolation-filters="sRGB"
                 >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
                   <feColorMatrix
                     in="SourceAlpha"
                     type="matrix"
@@ -121,9 +121,9 @@ const Navbar = () => {
                   y2="156.522"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#061648" />
-                  <stop offset="0.217236" stop-color="#112A7D" />
-                  <stop offset="1" stop-color="#0152CC" />
+                  <stop stopColor="#061648" />
+                  <stop offset="0.217236" stopColor="#112A7D" />
+                  <stop offset="1" stopColor="#0152CC" />
                 </linearGradient>
                 <linearGradient
                   id="paint1_linear_437_12756"
@@ -133,9 +133,9 @@ const Navbar = () => {
                   y2="175.652"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#F5E45F" />
-                  <stop offset="0.401042" stop-color="#E3B326" />
-                  <stop offset="0.979167" stop-color="#D86D0B" />
+                  <stop stopColor="#F5E45F" />
+                  <stop offset="0.401042" stopColor="#E3B326" />
+                  <stop offset="0.979167" stopColor="#D86D0B" />
                 </linearGradient>
                 <linearGradient
                   id="paint2_linear_437_12756"
@@ -145,9 +145,9 @@ const Navbar = () => {
                   y2="180.224"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#F5E45F" />
-                  <stop offset="0.401042" stop-color="#E3B326" />
-                  <stop offset="1" stop-color="#D86D0B" />
+                  <stop stopColor="#F5E45F" />
+                  <stop offset="0.401042" stopColor="#E3B326" />
+                  <stop offset="1" stopColor="#D86D0B" />
                 </linearGradient>
                 <linearGradient
                   id="paint3_linear_437_12756"
@@ -157,9 +157,9 @@ const Navbar = () => {
                   y2="210.786"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#F5E45F" />
-                  <stop offset="0.401042" stop-color="#E3B326" />
-                  <stop offset="1" stop-color="#D86D0B" />
+                  <stop stopColor="#F5E45F" />
+                  <stop offset="0.401042" stopColor="#E3B326" />
+                  <stop offset="1" stopColor="#D86D0B" />
                 </linearGradient>
                 <linearGradient
                   id="paint4_linear_437_12756"
@@ -169,9 +169,9 @@ const Navbar = () => {
                   y2="218.006"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#F5E45F" />
-                  <stop offset="0.401042" stop-color="#E3B326" />
-                  <stop offset="0.994792" stop-color="#D86D0B" />
+                  <stop stopColor="#F5E45F" />
+                  <stop offset="0.401042" stopColor="#E3B326" />
+                  <stop offset="0.994792" stopColor="#D86D0B" />
                 </linearGradient>
                 <radialGradient
                   id="paint5_radial_437_12756"
@@ -181,11 +181,11 @@ const Navbar = () => {
                   gradientUnits="userSpaceOnUse"
                   gradientTransform="translate(228.339 101.475) rotate(155.143) scale(219.396 479.811)"
                 >
-                  <stop stop-color="#FFFAD0" />
-                  <stop offset="0.244429" stop-color="#F1DC3A" />
-                  <stop offset="0.584686" stop-color="#DCA11D" />
-                  <stop offset="0.824111" stop-color="#E0710B" />
-                  <stop offset="1" stop-color="#9E4E04" />
+                  <stop stopColor="#FFFAD0" />
+                  <stop offset="0.244429" stopColor="#F1DC3A" />
+                  <stop offset="0.584686" stopColor="#DCA11D" />
+                  <stop offset="0.824111" stopColor="#E0710B" />
+                  <stop offset="1" stopColor="#9E4E04" />
                 </radialGradient>
                 <radialGradient
                   id="paint6_radial_437_12756"
@@ -195,11 +195,11 @@ const Navbar = () => {
                   gradientUnits="userSpaceOnUse"
                   gradientTransform="translate(228.339 101.475) rotate(155.143) scale(219.396 479.811)"
                 >
-                  <stop stop-color="#FFFAD0" />
-                  <stop offset="0.244429" stop-color="#F1DC3A" />
-                  <stop offset="0.584686" stop-color="#DCA11D" />
-                  <stop offset="0.885417" stop-color="#E0710B" />
-                  <stop offset="1" stop-color="#9E4E04" />
+                  <stop stopColor="#FFFAD0" />
+                  <stop offset="0.244429" stopColor="#F1DC3A" />
+                  <stop offset="0.584686" stopColor="#DCA11D" />
+                  <stop offset="0.885417" stopColor="#E0710B" />
+                  <stop offset="1" stopColor="#9E4E04" />
                 </radialGradient>
                 <linearGradient
                   id="paint7_linear_437_12756"
@@ -209,9 +209,9 @@ const Navbar = () => {
                   y2="234.94"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0.0885417" stop-color="#3076FF" />
-                  <stop offset="0.411458" stop-color="#024FC6" />
-                  <stop offset="1" stop-color="#0D2267" />
+                  <stop offset="0.0885417" stopColor="#3076FF" />
+                  <stop offset="0.411458" stopColor="#024FC6" />
+                  <stop offset="1" stopColor="#0D2267" />
                 </linearGradient>
               </defs>
             </svg>

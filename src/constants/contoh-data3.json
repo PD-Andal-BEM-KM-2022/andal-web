@@ -1,0 +1,313 @@
+{
+  "sys": {
+    "type": "Array"
+  },
+  "total": 1,
+  "skip": 0,
+  "limit": 100,
+  "items": [
+    {
+      "metadata": {
+        "tags": []
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "x5yulb03v0z7"
+          }
+        },
+        "id": "1Y0VtSW8SXKIGcL8CP6IbW",
+        "type": "Entry",
+        "createdAt": "2023-07-11T03:08:01.743Z",
+        "updatedAt": "2023-07-11T03:19:36.491Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "revision": 2,
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "archieve"
+          }
+        },
+        "locale": "en-US"
+      },
+      "fields": {
+        "thumbnail": {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "x5yulb03v0z7"
+              }
+            },
+            "id": "5MIJWjO6nUJqVZmjdzWaYk",
+            "type": "Asset",
+            "createdAt": "2023-07-11T03:06:37.190Z",
+            "updatedAt": "2023-07-11T03:06:37.190Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "locale": "en-US"
+          },
+          "fields": {
+            "title": "Sample",
+            "description": "Sample",
+            "file": {
+              "url": "//images.ctfassets.net/x5yulb03v0z7/5MIJWjO6nUJqVZmjdzWaYk/5df1c4dedfffd037a52e1a1ebbc93a8a/properti.webp",
+              "details": {
+                "size": 18458,
+                "image": {
+                  "width": 595,
+                  "height": 842
+                }
+              },
+              "fileName": "properti.webp",
+              "contentType": "image/webp"
+            }
+          }
+        },
+        "title": "Sample Archive",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur congue, elit eget cursus tristique, lectus metus fermentum nisi, vel dignissim nibh neque eget turpis. Suspendisse et porta risus. Mauris vitae diam eu tortor condimentum dapibus. Maecenas sed accumsan risus, quis lobortis lorem. Nullam in maximus nisl. Donec felis turpis, eleifend nec dignissim sed, ornare at nibh. Fusce ante quam, iaculis nec fringilla et, cursus ultrices massa. Morbi placerat leo ante, sed volutpat neque aliquam nec. Praesent quis enim laoreet libero imperdiet blandit eu non ipsum. Fusce ut massa vel sapien vulputate sollicitudin et in lacus. Morbi condimentum luctus leo, vitae rhoncus tortor dapibus nec.\n\nSed a euismod metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut leo vitae lectus vestibulum varius vitae quis magna. Donec libero nulla, sagittis sed risus in, posuere molestie turpis. Nunc mauris neque, commodo ut nulla ut, iaculis laoreet ipsum. Donec lectus nulla, malesuada ac lorem vel, fringilla viverra dolor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam vitae commodo risus, vitae cursus nibh. Donec luctus dignissim velit vitae tincidunt. Praesent ultricies nisi mi, non aliquet diam lobortis ac. Donec quis magna bibendum lorem cursus facilisis. Cras efficitur pretium orci eget cursus.",
+        "initiator": [
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "x5yulb03v0z7"
+                }
+              },
+              "id": "6kkUk7qqdtzjIpjZe0MVFh",
+              "type": "Entry",
+              "createdAt": "2023-07-09T14:04:33.915Z",
+              "updatedAt": "2023-07-09T14:04:33.915Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "revision": 1,
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "member"
+                }
+              },
+              "locale": "en-US"
+            },
+            "fields": {
+              "name": "Mochamad Satria Riza Permana",
+              "position": "Produk Digital",
+              "faculty": "Teknik",
+              "batch": 2021,
+              "linkedIn": "https://www.linkedin.com/in/mochamadsatria"
+            }
+          }
+        ],
+        "date": "2023-07-11T10:07+07:00",
+        "pictures": [
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "x5yulb03v0z7"
+                }
+              },
+              "id": "5MIJWjO6nUJqVZmjdzWaYk",
+              "type": "Asset",
+              "createdAt": "2023-07-11T03:06:37.190Z",
+              "updatedAt": "2023-07-11T03:06:37.190Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "revision": 1,
+              "locale": "en-US"
+            },
+            "fields": {
+              "title": "Sample",
+              "description": "Sample",
+              "file": {
+                "url": "//images.ctfassets.net/x5yulb03v0z7/5MIJWjO6nUJqVZmjdzWaYk/5df1c4dedfffd037a52e1a1ebbc93a8a/properti.webp",
+                "details": {
+                  "size": 18458,
+                  "image": {
+                    "width": 595,
+                    "height": 842
+                  }
+                },
+                "fileName": "properti.webp",
+                "contentType": "image/webp"
+              }
+            }
+          },
+          {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "x5yulb03v0z7"
+                }
+              },
+              "id": "5MIJWjO6nUJqVZmjdzWaYk",
+              "type": "Asset",
+              "createdAt": "2023-07-11T03:06:37.190Z",
+              "updatedAt": "2023-07-11T03:06:37.190Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "revision": 1,
+              "locale": "en-US"
+            },
+            "fields": {
+              "title": "Sample",
+              "description": "Sample",
+              "file": {
+                "url": "//images.ctfassets.net/x5yulb03v0z7/5MIJWjO6nUJqVZmjdzWaYk/5df1c4dedfffd037a52e1a1ebbc93a8a/properti.webp",
+                "details": {
+                  "size": 18458,
+                  "image": {
+                    "width": 595,
+                    "height": 842
+                  }
+                },
+                "fileName": "properti.webp",
+                "contentType": "image/webp"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "includes": {
+    "Entry": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "x5yulb03v0z7"
+            }
+          },
+          "id": "6kkUk7qqdtzjIpjZe0MVFh",
+          "type": "Entry",
+          "createdAt": "2023-07-09T14:04:33.915Z",
+          "updatedAt": "2023-07-09T14:04:33.915Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "member"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "name": "Mochamad Satria Riza Permana",
+          "position": "Produk Digital",
+          "faculty": "Teknik",
+          "batch": 2021,
+          "linkedIn": "https://www.linkedin.com/in/mochamadsatria"
+        }
+      }
+    ],
+    "Asset": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "x5yulb03v0z7"
+            }
+          },
+          "id": "5MIJWjO6nUJqVZmjdzWaYk",
+          "type": "Asset",
+          "createdAt": "2023-07-11T03:06:37.190Z",
+          "updatedAt": "2023-07-11T03:06:37.190Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 1,
+          "locale": "en-US"
+        },
+        "fields": {
+          "title": "Sample",
+          "description": "Sample",
+          "file": {
+            "url": "//images.ctfassets.net/x5yulb03v0z7/5MIJWjO6nUJqVZmjdzWaYk/5df1c4dedfffd037a52e1a1ebbc93a8a/properti.webp",
+            "details": {
+              "size": 18458,
+              "image": {
+                "width": 595,
+                "height": 842
+              }
+            },
+            "fileName": "properti.webp",
+            "contentType": "image/webp"
+          }
+        }
+      }
+    ]
+  }
+}
