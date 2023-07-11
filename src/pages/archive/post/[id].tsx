@@ -1,21 +1,15 @@
-import { useRouter } from "next/router";
-import { archives } from "..";
 import Image from "next/image";
 import Link from "next/link";
 import { GetServerSideProps } from "next";
 
-// {
-//   thumbnail: string;
-//   title: string;
-//   description: string;
-//   initiator: string;
-//   date: string;
-//   pictures: string[];
-// }
-
-const PostID = (props: any) => {
-  const archive = props;
-
+const PostID = (archive: {
+  thumbnail: any;
+  title: string;
+  description: string;
+  initiator: any;
+  date: any;
+  pictures: any;
+}) => {
   return (
     <>
       <section className="w-full h-full overflow-hidden">
@@ -43,29 +37,29 @@ const PostID = (props: any) => {
           </div>
           <div className="mx-4 pt-7 pb-4 lg:hidden">
             <h2 className="text-center font-extrabold mx-4 leading-tight">
-              {archive["title"]}
+              {archive.title}
             </h2>
             <div className="relative w-auto flex justify-start gap-x-4 h-[320px] mt-4 p-2">
-              {archive["photos"].map((img, i) => (
+              {archive.pictures.map((img: any, i: number) => (
                 <Image
                   key={i}
-                  src={`/images/${img}`}
+                  src={"https:" + img.file.url}
                   width={0}
                   height={0}
                   sizes="100%"
                   quality={100}
-                  alt=""
+                  alt={img.title}
                   className="w-auto h-full object-cover rounded-lg"
                 />
               ))}
             </div>
             <div className="text-ss relative text-andal-darkblue bg-andal-lightblue rounded-lg px-3 py-4 mt-6">
               <p className="leading-tight text-justify max-h-[270px] overflow-auto pr-2 about-home">
-                {archive["content"]}
+                {archive.description}
               </p>
               <div className="flex justify-between items-center mt-4">
-                <span className="font-medium">{archive["author"]}</span>
-                <span className="font-medium">{archive["date"]}</span>
+                {/* <span className="font-medium">{archive.initiator}</span> */}
+                <span className="font-medium">{archive.date}</span>
               </div>
             </div>
           </div>
@@ -75,25 +69,25 @@ const PostID = (props: any) => {
         {/* DESKTOP */}
         <div className="hidden lg:grid grid-cols-2 bg-andal-lightblue w-full">
           <div className="">
-            {archive["photos"].map((img, i) => (
+            {archive.pictures.map((img: any, i: number) => (
               <Image
                 key={i}
-                src={`/images/${img}`}
+                src={"https:" + img.file.url}
                 width={0}
                 height={0}
                 sizes="100%"
                 quality={100}
-                alt=""
+                alt={img.title}
                 className="w-auto h-full object-cover rounded-lg"
               />
             ))}
           </div>
           <div className="text-andal-darkblue">
-            <h2>{archive["title"]}</h2>
-            <p>{archive["content"]}</p>
+            <h2>{archive.title}</h2>
+            <p>{archive.description}</p>
             <div className="flex justify-between">
-              <h5>{archive["author"]}</h5>
-              <h5>{archive["date"]}</h5>
+              {/* <h5>{archive.initiator}</h5> */}
+              <h5>{archive.date}</h5>
             </div>
           </div>
         </div>
@@ -107,8 +101,8 @@ export default PostID;
 
 import * as contentful from "contentful";
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
-  const { id } = context.params;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { id } = context.params!;
 
   const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID as string,
@@ -117,11 +111,16 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
   });
 
   try {
-    const data = await client.getEntry(id);
+    const data = (await client.getEntry(id as string)).fields as any;
 
     return {
       props: {
-        ...data.fields,
+        title: data.title,
+        description: data.description,
+        date: data.date,
+        initiator: data.initiator.map((member: any) => member.fields),
+        pictures: data.pictures.map((picture: any) => picture.fields),
+        thumbnail: data.thumbnail.fields,
       },
     };
   } catch (error) {
