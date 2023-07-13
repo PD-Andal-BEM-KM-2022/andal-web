@@ -2,6 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Kedirjenan = () => {
+  const kedirjenans = [
+    "humas",
+    "media",
+    "personalia",
+    "produk digital",
+    "riset data",
+    "riset spasial",
+  ];
+
   return (
     <>
       <section className="mb-24 relative overflow-y-visible overflow-x-clip">
@@ -9,12 +18,9 @@ const Kedirjenan = () => {
           Kedirjenan
         </h3>
         <div className="grid grid-cols-2 mt-14 place-content-center gap-3 px-3 lg:gap-10 lg:px-28 container mx-auto">
-          <KedirjenanCard name="Riset Data" />
-          <KedirjenanCard name="Riset Spasial" />
-          <KedirjenanCard name="Humas" />
-          <KedirjenanCard name="Media" />
-          <KedirjenanCard name="Produk Digital" />
-          <KedirjenanCard name="Personalia" />
+          {kedirjenans.map((kedirjenan, i) => (
+            <KedirjenanCard name={kedirjenan} />
+          ))}
         </div>
 
         <div
@@ -272,7 +278,7 @@ const KedirjenanCard = ({ name }: { name: string }) => {
           </div>
           <h6 className="text-andal-darkblue text-ss font-extrabold text-center h-12 grid place-content-center leading-none lg:h-full lg:flex lg:flex-col lg:justify-start lg:my-1 lg:text-lg 2xl:text-xl relative z-40">
             <span className="lg:leading-none">Kedirjenan</span>
-            <span className="lg:leading-none">{name}</span>
+            <span className="lg:leading-none capitalize">{name}</span>
           </h6>
         </div>
       </Link>

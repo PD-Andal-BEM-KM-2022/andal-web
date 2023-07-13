@@ -30,6 +30,36 @@ const KedirjenanPage = () => {
           image: "lead.png",
           prodi: "Ilmu Komputer 2023",
         },
+        {
+          name: "Member 1 Humas",
+          image: "lead.png",
+          prodi: "Ilmu Komputer 2023",
+        },
+        {
+          name: "Member 2 Humas",
+          image: "lead.png",
+          prodi: "Ilmu Komputer 2023",
+        },
+        {
+          name: "Member 3 Humas",
+          image: "lead.png",
+          prodi: "Ilmu Komputer 2023",
+        },
+        {
+          name: "Member 1 Humas",
+          image: "lead.png",
+          prodi: "Ilmu Komputer 2023",
+        },
+        {
+          name: "Member 2 Humas",
+          image: "lead.png",
+          prodi: "Ilmu Komputer 2023",
+        },
+        {
+          name: "Member 3 Humas",
+          image: "lead.png",
+          prodi: "Ilmu Komputer 2023",
+        },
       ],
     },
     {

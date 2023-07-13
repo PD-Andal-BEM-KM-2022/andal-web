@@ -3,15 +3,24 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [navMenu, setNavMenu] = useState(false);
+  const [showkedirjenan, setShowKedirjenan] = useState(false);
+  const kedirjenans = [
+    "humas",
+    "media",
+    "personalia",
+    "produk digital",
+    "riset data",
+    "riset spasial",
+  ];
 
   return (
     <>
       <nav className="flex justify-between fixed z-50 w-full p-6 lg:grid lg:grid-cols-[0.8fr_1.2fr_0.8fr]">
-        {/* NAVBAR BUTTONS */}
+        {/* MOBILE NAVBAR BUTTONS */}
         <Link href="/" className="h-fit">
           <button
             type="button"
-            className={`bg-andal-lightblue rounded-full p-1 border border-andal-lightgreyblue w-8 h-8 flex items-center justify-center shadow-md lg:w-auto lg:h-auto lg:px-6 lg:py-3 lg:gap-x-1 duration-1000 ${
+            className={`bg-andal-lightblue rounded-full p-1 border-t border-andal-lightgreyblue w-8 h-8 flex items-center justify-center shadow-md lg:w-auto lg:h-auto lg:px-6 lg:py-3 lg:gap-x-1 duration-1000 ${
               navMenu ? "-translate-y-[200%]" : ""
             }`}
           >
@@ -221,17 +230,46 @@ const Navbar = () => {
           </button>
         </Link>
 
-        <div className="hidden lg:flex items-center justify-center rounded-full bg-andal-lightblue w-fit py-3 px-10 gap-x-7 shadow-md mx-auto">
+        {/* DESKTOP NAVBAR BUTTONS */}
+        <div className="hidden lg:flex items-center justify-center rounded-full bg-andal-lightblue w-fit py-3 px-10 gap-x-7 shadow-md mx-auto relative z-10 border-t border-andal-lightgreyblue">
           <Link href="/about">
             <button className="text-andal-darkblue font-medium">
               About Us
             </button>
           </Link>
-          <Link href="/kedirjenan/produkdigital">
-            <button className="text-andal-darkblue font-medium">
-              Kedirjenan
-            </button>
-          </Link>
+          <button
+            onMouseOver={() => setShowKedirjenan(true)}
+            onMouseLeave={() => setShowKedirjenan(false)}
+            className="text-andal-darkblue font-medium h-[150%]"
+          >
+            Kedirjenan
+          </button>
+
+          {/* KEDIRJENAN LIST */}
+          <div
+            className={`absolute left-1/2 bottom-0 -translate-x-1/2 bg-andal-lightblue flex flex-col gap-y-6 rounded-lg px-4 py-3 border-t border-andal-lightgreyblue duration-500 ${
+              showkedirjenan
+                ? "translate-y-[98%]"
+                : "translate-y-[80%] opacity-0 pointer-events-none"
+            }`}
+            onMouseOver={() => setShowKedirjenan(true)}
+            onMouseLeave={() => setShowKedirjenan(false)}
+          >
+            {kedirjenans.map((kedirjenan, i) => (
+              <Link
+                href={`/about/${kedirjenan.replace(/\s/g, "").toLowerCase()}`}
+              >
+                <button
+                  onClick={() => setShowKedirjenan(false)}
+                  className="capitalize text-andal-darkblue whitespace-nowrap"
+                  onMouseOver={() => setShowKedirjenan(true)}
+                  onMouseLeave={() => setShowKedirjenan(false)}
+                >
+                  Kedirjenan {kedirjenan}
+                </button>
+              </Link>
+            ))}
+          </div>
           <Link href="/archive">
             <button className="text-andal-darkblue font-medium">Archive</button>
           </Link>
@@ -270,9 +308,10 @@ const Navbar = () => {
         >
           <div>
             <div className="flex justify-end">
+              {/* CLOSE BUTTON */}
               <button
                 className={`duration-1000 ${navMenu ? "" : "rotate-[180deg]"}`}
-                onClick={() => setNavMenu(!navMenu)}
+                onClick={() => setNavMenu(false)}
               >
                 <svg
                   width="14"
@@ -289,28 +328,82 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
+
+            {/* NAV MENU ITEMS */}
             <div
               className={`mt-7 relative z-20 duration-1000 ${
                 navMenu ? "" : "-translate-y-1/2 opacity-0"
               }`}
             >
               <Link href="/">
-                <button className="font-extrabold text-lg">Homepage</button>
+                <button
+                  onClick={() => setNavMenu(false)}
+                  className="font-extrabold text-lg"
+                >
+                  Homepage
+                </button>
               </Link>
               <hr className="bg-andal-button-orange border-transparent my-6" />
               <Link href="/about">
-                <button className="font-extrabold text-lg">About Us</button>
+                <button
+                  onClick={() => setNavMenu(false)}
+                  className="font-extrabold text-lg"
+                >
+                  About Us
+                </button>
               </Link>
               <hr className="bg-andal-button-orange border-transparent my-6" />
-              <Link href="/kedirjenan">
-                <button className="font-extrabold text-lg">Kedirjenan</button>
-              </Link>
+              <button
+                onClick={() => setShowKedirjenan(!showkedirjenan)}
+                className="font-extrabold text-lg block"
+              >
+                Kedirjenan
+              </button>
+
+              {/* KEDIRJENAN LIST */}
+              <div
+                className={`overflow-hidden ${
+                  showkedirjenan ? "h-full" : "h-0pointer-events-none"
+                }`}
+              >
+                <div
+                  className={`flex flex-col gap-y-3  duration-500 ${
+                    showkedirjenan
+                      ? "h-[14em] ml-3 mt-3"
+                      : "h-0 opacity-0/ -translate-y-full/ pointer-events-none"
+                  }`}
+                >
+                  {kedirjenans.map((kedirjenan, i) => (
+                    <Link
+                      href={`/kedirjenan/${kedirjenan
+                        .replace(/\s/g, "")
+                        .toLowerCase()}`}
+                    >
+                      <button
+                        onClick={() => {
+                          setNavMenu(false), setShowKedirjenan(false);
+                        }}
+                        className="text-lg capitalize"
+                      >
+                        Kedirjenan {kedirjenan}
+                      </button>
+                    </Link>
+                  ))}
+                </div>
+              </div>
               <hr className="bg-andal-button-orange border-transparent my-6" />
               <Link href="/archive">
-                <button className="font-extrabold text-lg">Archive</button>
+                <button
+                  onClick={() => setNavMenu(false)}
+                  className="font-extrabold text-lg"
+                >
+                  Archive
+                </button>
               </Link>
             </div>
           </div>
+
+          {/* NAV FOOTER */}
           <div
             className={`relative z-20 duration-1000 delay-200 ${
               navMenu ? "" : "translate-y-full opacity-0"
@@ -318,11 +411,15 @@ const Navbar = () => {
           >
             <span>© Andal 2023 - All rights reserved.</span>
           </div>
+
+          {/* GRADIENT BACKGROUND */}
           <div
             className={`w-[150%] h-[150%] absolute bottom-0 left-1/2 z-10 -translate-x-1/2 translate-y-1/2 rounded-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#072A79] via-transparent to-transparent duration-500 ${
               navMenu ? "" : "opacity-0"
             }`}
           ></div>
+
+          {/* ORNAMENT BACKGROUND */}
           <div className="absolute bottom-0 right-0">
             <svg
               width="120"

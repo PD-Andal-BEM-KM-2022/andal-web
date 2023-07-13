@@ -59,33 +59,31 @@ const Anggota = ({
               delay: 2500,
               disableOnInteraction: false,
             }}
+            speed={5000}
             breakpoints={{
               640: {
-                loop: true,
                 slidesPerView: 2.2,
                 autoplay: {
-                  delay: 2500,
+                  delay: 1,
                   disableOnInteraction: false,
                 },
               },
               1024: {
-                loop: true,
                 slidesPerView: 3.2,
                 autoplay: {
-                  delay: 2500,
+                  delay: 1,
                   disableOnInteraction: false,
                 },
               },
               1280: {
-                loop: true,
                 slidesPerView: 4.2,
                 autoplay: {
-                  delay: 2500,
+                  delay: 1,
                   disableOnInteraction: false,
                 },
               },
             }}
-            className="flex w-full"
+            className="flex w-full ease-linear"
           >
             {kedirjenan?.members.map(({ name, prodi, image }, i) => (
               <SwiperSlide key={i} className="pt-3">

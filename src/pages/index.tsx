@@ -12,6 +12,7 @@ export default function Home() {
       <Head>
         <title>Andal 2023</title>
       </Head>
+
       <Navbar />
       <Hero />
       <About />
