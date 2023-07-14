@@ -93,7 +93,7 @@ const PostID = (archive: {
             </div>
           </div>
         </div>
-        {/* ENDDESKTOP */}
+        {/* END DESKTOP */}
       </section>
     </>
   );

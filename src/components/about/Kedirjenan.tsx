@@ -19,7 +19,7 @@ const Kedirjenan = () => {
         </h3>
         <div className="grid grid-cols-2 mt-14 place-content-center gap-3 px-3 lg:gap-10 lg:px-28 container mx-auto">
           {kedirjenans.map((kedirjenan, i) => (
-            <KedirjenanCard name={kedirjenan} />
+            <KedirjenanCard key={i} name={kedirjenan} />
           ))}
         </div>
 

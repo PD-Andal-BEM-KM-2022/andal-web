@@ -292,24 +292,25 @@ const Card = ({
             className="h-full w-full object-cover rounded-xl overflow-hidden"
           />
         </div>
-        <div className="absolute bottom-3 mx-3 rounded-xl flex justify-between bg-andal-light px-5 py-4 items-center lg:h-[calc(100%-1.5rem)]/  lg:flex-col group">
-          <div className="text-andal-darkblue text-ss overflow-hidden text-ellipsis mb-2">
+        {/* CARD DETAIL */}
+        <div className="absolute w-[calc(100%-1.5rem)] bottom-3 mx-3 rounded-xl flex justify-between bg-andal-light border-2 border-andal-darkblue px-5 py-4 items-center lg:h-[calc(100%-1.5rem)]/ lg:flex-col">
+          <div className="w-full text-andal-darkblue text-ss overflow-hidden text-ellipsis lg:group-hover:mb-2">
             <h5 className="font-extrabold leading-none lg:text-base lg:leading-none lg:line-clamp-2 lg:pb-[2.5px]">
               {archive.title}
             </h5>
             <div className="flex justify-between items-start mt-4 lg:mt-3">
-              <h6 className="text-xs font-bold">
+              <span className="text-xs font-bold">
                 {archive.initiator[0].position}
-              </h6>
-              <h6 className="text-xs lg:flex">
+              </span>
+              <span className="text-xs lg:flex">
                 {dayjs(archive.date).format("DD MMM YYYY")}
-              </h6>
+              </span>
             </div>
-            <p className="hidden lg:inline-block mt-5 leading-tight line-clamp-2 h-0 duration-500 group-hover:h-9">
+            <p className="hidden lg:inline-block leading-tight line-clamp-2 h-0 duration-500 group-hover:mt-5 group-hover:h-9">
               {archive.description}
             </p>
           </div>
-          <button className="hidden lg:block bg-andal-button-orange py-3 w-full rounded-md font-medium text-andal-button-orange h-0 opacity-0 duration-500 group-hover:text-andal-darkblue group-hover:h-12 group-hover:opacity-100">
+          <button className="hidden lg:block bg-andal-button-orange py-0 w-full rounded-md font-medium text-andal-button-orange h-0 opacity-0 duration-500 group-hover:py-3 group-hover:text-andal-darkblue group-hover:h-12 group-hover:opacity-100">
             Read More
           </button>
         </div>
@@ -404,7 +405,8 @@ const Card = ({
           </svg>
         </button>
 
-        <div className="grid grid-cols-2 text-andal-darkblue w-full h-full relative z-10 px-24 2xl:px-40 py-14 gap-x-12">
+        <div className="grid grid-cols-[1.1fr_0.9fr] text-andal-darkblue w-full h-full relative z-10 px-24 2xl:px-40 py-14 gap-x-4">
+          <ArchiveCarousel />
           {/* <ArchiveCarousel images={archive.photos} /> */}
           {/* <div className="w-full h-full">
             {archive.photos.map((photo, i) => (
@@ -423,7 +425,7 @@ const Card = ({
               <h2 className="font-extrabold text-4xl leading-none mb-4">
                 {archive.title}
               </h2>
-              <p className="font-medium text-justify pr-4 overflow-auto flex-1">
+              <p className="font-medium text-justify pr-4 overflow-auto flex-1 max-h-[72vh]">
                 {archive.description}
               </p>
             </div>
@@ -434,6 +436,7 @@ const Card = ({
           </div>
         </div>
 
+        {/* BACKGROUND ORNAMENT */}
         <div className="absolute top-0 left-0">
           <svg
             width={205}

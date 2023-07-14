@@ -257,6 +257,7 @@ const Navbar = () => {
           >
             {kedirjenans.map((kedirjenan, i) => (
               <Link
+                key={i}
                 href={`/about/${kedirjenan.replace(/\s/g, "").toLowerCase()}`}
               >
                 <button
@@ -375,6 +376,7 @@ const Navbar = () => {
                 >
                   {kedirjenans.map((kedirjenan, i) => (
                     <Link
+                      key={i}
                       href={`/kedirjenan/${kedirjenan
                         .replace(/\s/g, "")
                         .toLowerCase()}`}
