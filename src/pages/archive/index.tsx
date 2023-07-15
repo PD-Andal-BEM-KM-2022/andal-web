@@ -39,7 +39,7 @@ const ArchivePage = () => {
   return (
     <>
       <Head>
-        <title>Archive - ANDAL 2023</title>
+        <title>Archive | ANDAL 2023</title>
       </Head>
       <Navbar />
       <ArchiveHero />

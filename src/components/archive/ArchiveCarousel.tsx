@@ -35,8 +35,9 @@ const ArchiveCarousel = () => {
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
-            bulletClass: "text-3xl font-bold cursor-pointer opacity-80",
-            bulletActiveClass: "opacity-[1_!important]",
+            bulletClass:
+              "text-2xl font-bold cursor-pointer opacity-80 duration-500",
+            bulletActiveClass: "scale-110 opacity-[1_!important]",
             renderBullet: function (i: number, className: string) {
               return `<div class='${className}'>0${i + 1}</div>`;
             },
@@ -45,6 +46,14 @@ const ArchiveCarousel = () => {
             disabledClass: "opacity-50",
             prevEl: prevRef.current,
             nextEl: nextRef.current,
+          }}
+          breakpoints={{
+            1600: {
+              slidesPerView: 1.7,
+            },
+            1920: {
+              slidesPerView: 1.5,
+            },
           }}
           className="h-full flex w-full"
         >
@@ -58,7 +67,7 @@ const ArchiveCarousel = () => {
                   height={0}
                   sizes="100%"
                   quality={100}
-                  className="w-auto h-full object-cover rounded-2xl border-t-2 border-r-2 border-l-2 border-andal-darkblue"
+                  className="w-full h-full object-cover rounded-2xl border-t-2 border-r-2 border-l-2 border-andal-darkblue"
                 />
               </div>
             </SwiperSlide>
@@ -83,7 +92,7 @@ const ArchiveCarousel = () => {
 
             <div
               ref={paginationRef}
-              className="swiper-pagination flex flex-col justify-center items-center gap-y-[.3em] absolute top-40 left-20"
+              className="swiper-pagination flex flex-col justify-center items-center gap-y-[1em] absolute top-40 left-20"
             ></div>
 
             <div

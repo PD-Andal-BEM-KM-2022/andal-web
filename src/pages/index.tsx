@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Andal 2023</title>
+        <title>Home | Andal 2023</title>
       </Head>
 
       <Navbar />
