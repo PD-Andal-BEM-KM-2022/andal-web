@@ -90,7 +90,7 @@ const Archives = ({
           </svg>
           <input
             type="text"
-            className="text-andal-darkblue bg-transparent placeholder:text-andal-darkblue focus:outline-none"
+            className="text-andal-darkblue bg-transparent placeholder:text-andal-darkblue focus:outline-none block w-full"
             placeholder="Search"
           />
         </div>
@@ -229,7 +229,7 @@ const Archives = ({
             </svg>
           </button>
         </div>
-        <div className="pt-7 pb-12 mx-8 flex flex-wrap justify-center gap-y-7 gap-7 lg:bg-[#112A7C]/50 lg:grid lg:grid-cols-2  xl:grid-cols-3 lg:place-items-center lg:p-9 lg:rounded-b-2xl lg:mx-auto">
+        <div className="pt-7 pb-12 mx-8 flex flex-wrap justify-center gap-y-7 gap-7 lg:bg-[#112A7C]/50 lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:place-items-center lg:p-9 lg:rounded-b-2xl lg:mx-auto">
           {archives.map((archive: any, i: number) =>
             archive.initiator[0].position.toLowerCase() == selectedDirjen ||
             selectedDirjen == "semua kedirjenan" ? (
@@ -242,7 +242,55 @@ const Archives = ({
                 setCountContent={setCountContent}
               />
             ) : (
-              <></>
+              <div className="flex flex-col container mx-auto lg:col-span-3 lg:mb-12">
+                <div className="py-10 mx-auto lg:scale-150 lg:py-20">
+                  <svg
+                    width={182}
+                    height={183}
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M77.89 120.424l-53.056 51.744M61.042 103.148L7.985 154.892"
+                      stroke="#94A0B8"
+                      strokeWidth={7.493}
+                    />
+                    <path
+                      d="M7.985 154.892a12.065 12.065 0 00-.214 17.063M24.835 172.168a12.063 12.063 0 01-17.062-.213M124.503 4.479a54.297 54.297 0 10-1.36 108.586 54.297 54.297 0 001.36-108.586zM77.89 120.424l-16.848-17.276M69.466 111.786l15.487-15.104M63.145 134.806l-16.85-17.277"
+                      stroke="#94A0B8"
+                      strokeWidth={7.493}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M121.528 85.159c-.686-2.437-2.908-7.968-6.306-10.6-3.397-2.632-9.843-3.044-11.923-2.75M103.148 43.893c.283 2.227 1.654 6.996 5.052 9.628 3.397 2.632 9.83 2.262 11.911 1.968M129.906 59.99c.283 2.227 1.654 6.995 5.051 9.628 3.398 2.632 9.831 2.261 11.912 1.968"
+                      stroke="#94A0B8"
+                      strokeWidth={4.395}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M156.743 66.417c-3.726-1.703-11.151-7.496-11.041-17.047M104.133 32.57c3.172 2.593 11.648 6.698 20.17 2.383"
+                      stroke="#94A0B8"
+                      strokeWidth={3.174}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M153.272 169.734l.238-1.175c.303-1.5.773-2.77 1.41-3.812.677-1.069 1.446-1.977 2.307-2.725a25.108 25.108 0 012.582-1.978l3.195-2.12c.95-.659 1.531-1.517 1.745-2.573.145-.716.102-1.381-.128-1.995-.224-.648-.645-1.194-1.265-1.639-.578-.472-1.362-.808-2.35-1.008-1.26-.255-2.447-.087-3.56.504-1.072.563-1.841 1.471-2.307 2.725l-6.743-3.227c.693-1.846 1.73-3.374 3.11-4.585 1.414-1.203 3.073-2.038 4.976-2.504 1.937-.459 3.996-.468 6.177-.027 2.658.538 4.783 1.518 6.375 2.94 1.633 1.394 2.744 3.003 3.333 4.824.596 1.788.711 3.585.346 5.391-.263 1.295-.753 2.401-1.471 3.32a12.415 12.415 0 01-2.398 2.388 52.623 52.623 0 01-2.838 1.926 24.453 24.453 0 00-3.442 2.549c-1.038.925-1.706 2.12-2.002 3.585l-.135.664-7.155-1.448zm-2.584 11.714l1.552-7.666 7.666 1.551-1.551 7.667-7.667-1.552zM20.043 31.994l-.471-.896c-.602-1.143-.972-2.225-1.112-3.246a10.382 10.382 0 01.056-3.015c.164-.948.376-1.839.634-2.671l.96-3.093c.27-.938.192-1.81-.232-2.614-.287-.546-.67-.958-1.148-1.237-.492-.305-1.06-.438-1.702-.398-.63 0-1.322.198-2.075.595-.961.505-1.648 1.248-2.061 2.228-.4.94-.42 1.946-.056 3.015l-6.133 1.486c-.532-1.578-.67-3.13-.412-4.66.283-1.541.923-2.973 1.92-4.293 1.022-1.334 2.365-2.439 4.027-3.313 2.027-1.067 3.94-1.56 5.74-1.478 1.813.04 3.398.5 4.756 1.378a8.7 8.7 0 013.102 3.343c.52.987.79 1.973.81 2.957.032.945-.066 1.892-.296 2.842-.243.924-.52 1.85-.829 2.775a20.634 20.634 0 00-.892 3.504c-.186 1.16.015 2.297.602 3.414l.267.507-5.455 2.87zm4.56 9.044l-3.076-5.844 5.845-3.076 3.076 5.845-5.845 3.075z"
+                      fill="#94A0B8"
+                    />
+                  </svg>
+                </div>
+                <div className="text-center text-andal-lightgrey">
+                  <span className="text-5xl font-extrabold lg:text-6xl">
+                    Sorry!
+                  </span>
+                  <p className="text-xl font-semibold mt-2 lg:text-2xl">
+                    Your Search Not Found
+                  </p>
+                </div>
+              </div>
             )
           )}
         </div>
@@ -293,7 +341,7 @@ const Card = ({
           />
         </div>
         {/* CARD DETAIL */}
-        <div className="absolute w-[calc(100%-1.5rem)] bottom-3 mx-3 rounded-xl flex justify-between bg-andal-light border-2 border-andal-darkblue px-5 py-4 items-center lg:h-[calc(100%-1.5rem)]/ lg:flex-col">
+        <div className="absolute w-[calc(100%-1.5rem)] bottom-3 mx-3 rounded-xl flex justify-between bg-andal-light border-2 border-andal-darkblue px-5 py-4 items-center duration-500 lg:h-fit lg:hover:h-[calc(100%-1.5rem)]/ lg:flex-col">
           <div className="w-full text-andal-darkblue text-ss overflow-hidden text-ellipsis lg:group-hover:mb-2">
             <h5 className="font-extrabold leading-none lg:text-base lg:leading-none lg:line-clamp-2 lg:pb-[2.5px]">
               {archive.title}
