@@ -263,7 +263,7 @@ const KedirjenanCard = ({ name }: { name: string }) => {
                 </linearGradient>
               </defs>
             </svg> */}
-            <div className="relative z-10">
+            <div className="relative z-10 w-1/4">
               <Image
                 src={`/icons/kedirjenan/${slug}.svg`}
                 alt=""

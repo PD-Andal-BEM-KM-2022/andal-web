@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <>
-      <main className="bg-[url(/images/hero.png)] bg-no-repeat bg-bottom bg-[length:185%] lg:bg-cover pt-20 overflow-hidden h-screen">
+      <main className="bg-[url(/images/hero.png)] bg-no-repeat bg-bottom bg-[length:185%] lg:bg-cover pt-24 lg:pt-36 overflow-hidden h-screen">
         <div className="relative z-10 leading-snug">
           <h1 className="text-2xl text-center font-extrabold text-andal-lightblue mx-auto lg:text-6xl">
             <p className="w-[70%] mx-auto ">

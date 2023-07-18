@@ -38,20 +38,10 @@ const Archive = () => {
             Archive
           </h2>
           <p className="font-medium text-ss text-center px-10 text-andal-lightgrey mt-4 lg:px-0 lg:ml-6 lg:text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Jelajahi berbagai kegiatan dan pencapaian yang telah dilakukan oleh
+            kementrian Andal BEM KM UGM.
           </p>
         </div>
-        {/* <div className="flex w-[300vw] lg:w-full relative z-10">
-          {content.map((content, i) => (
-            <Card
-              key={i}
-              i={i}
-              content={content}
-              active={active}
-              setActive={setActive}
-            />
-          ))}
-        </div> */}
         <Swiper
           onActiveIndexChange={(i) => setActive(i.realIndex)}
           initialSlide={0}
@@ -88,7 +78,7 @@ const Archive = () => {
               },
             },
           }}
-          className="flex "
+          className="flex duration-1000"
         >
           {content.map((content, i) => (
             <SwiperSlide
@@ -109,7 +99,7 @@ const Archive = () => {
         </Swiper>
         <div className="flex justify-center mt-6 relative z-10">
           <Link href="/archive">
-            <button className="text-ss font-medium text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg">
+            <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg">
               More Archived
             </button>
           </Link>
@@ -160,14 +150,14 @@ const Card = ({
           className="w-full h-auto lg:h-full object-cover rounded-lg"
         />
         <div
-          className={`absolute w-[calc(100%-28px)] bottom-4 left-1/2 -translate-x-1/2 rounded-2xl px-5 py-4 border-[2px] overflow-hidden ${
+          className={`absolute w-[calc(100%-28px)] bottom-4 left-1/2 -translate-x-1/2 rounded-2xl px-5 py-4 border-[2px] overflow-hidden duration-500 ${
             active == i
               ? "bg-andal-light border-[#040D21]"
-              : "bg-[#040D21] border-light  w-fit"
+              : "bg-[#040D21] border-light w-fit"
           }`}
         >
           <h5
-            className={`font-extrabold leading-none ${
+            className={`font-extrabold leading-none duration-500 ${
               active == i ? "text-andal-darkblue" : "text-center text-light"
             }`}
           >

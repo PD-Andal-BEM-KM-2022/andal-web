@@ -22,23 +22,21 @@ const About = () => {
           />
         </div>
         <div className="relative bg-andal-lightblue rounded-lg px-3 py-4 container mx-auto lg:px-16 lg:py-12 lg:grid lg:gap-x-14 2xl:gap-x-28 lg:grid-cols-[1.4fr_0.6fr]">
-          <div>
-            <h2 className="hidden lg:inline-block text-andal-darkblue lg:text-5xl font-extrabold mb-6">
-              About Andal
-            </h2>
-            <p className="text-andal-darkblue text-ss lg:text-xl leading-tight text-justify max-h-[270px] overflow-auto pr-2 about-home lg:max-h-full">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-              feugiat lectus. Class aptent taciti sociosqu ad litora torquent
-              per conubia nostra, per inceptos himenaeos. Praesent auctor purus
-              luctus enim egestas, ac scelerisque ante pulvinar. Donec ut
-              rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
-              vel bibendum lorem. Morbi convallis convallis diam sit amet
-              lacinia. Aliquam in elementum tellus. Morbi convallis convallis
-              diam sit amet lacinia. Aliquam in elementum tellus.
-            </p>
+          <div className="flex flex-col justify-between">
+            <div>
+              <h2 className="hidden lg:inline-block text-andal-darkblue lg:text-5xl font-extrabold mb-6">
+                About Andal
+              </h2>
+              <p className="text-andal-darkblue text-ss lg:text-xl leading-tight text-justify max-h-[270px] overflow-auto pr-2 about-home lg:max-h-full">
+                Dengan berlatar belakang teknologi, Kementerian Analisis Data
+                dan Produk Digital menjadi garda terdepan BEM KM UGM 2023 dalam
+                bidang tersebut yang dielaborasikan dengan isu hangat pada
+                khalayak publik. Melalui metode riset digital, pengkajian
+                terhadap isu dilakukan sehingga menawarkan output produk digital
+                yang objektif, aplikatif, berdaya guna, serta inovatif dalam
+                merespons perkembangan teknologi.
+              </p>
+            </div>
             <Link href="/about">
               <button className="text-ss font-medium text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg mx-auto block mt-4 lg:text-lg lg:mr-auto lg:ml-0">
                 Read More

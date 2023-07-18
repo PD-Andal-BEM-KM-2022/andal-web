@@ -24,10 +24,18 @@ const Lead = () => {
             dolor sit amet.
           </h2>
           <p className="text-center text-andal-lightgrey mt-6 lg:text-start lg:text-xl">
-            Have meals delivered to you within minutes from a wide variety of
-            restaurants ranging from African to Continental cuisines.
+            Andalin adalah software house (Perusahaan Penyedia Perangkat Lunak)
+            yang beroperasi di bawah naungan BEM KM UGM. Andalin memiliki
+            spesialisasi dalam pembuatan website dan layanan digital lainnya.
+            Andalin menerima proyek dari berbagai BSO di UGM dan UMKM sebagai
+            calon pelanggan. Andalin menawarkan solusi teknologi yang inovatif
+            dan berkualitas tinggi untuk memenuhi kebutuhan digital para
+            pelanggannya yang dibersamai dengan dukungan dari BEM KM UGM,.
+            Dengan tim yang ahli dan pengalaman yang luas, Andalin siap membantu
+            BSO di UGM dan UMKM dalam mengembangkan kehadiran online mereka dan
+            mencapai tujuan bisnis mereka.
           </p>
-          <button className="text-ss font-medium text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg mx-auto block mt-4 lg:mr-auto lg:ml-0 lg:text-lg">
+          <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg mx-auto block mt-4 lg:mr-auto lg:ml-0 lg:text-lg">
             Andalin Page
           </button>
         </div>
