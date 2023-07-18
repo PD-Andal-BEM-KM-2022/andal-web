@@ -13,7 +13,7 @@ const KedirjenanPage = () => {
     {
       id: 0,
       title: "Humas",
-      desc: "Humas Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.  risus sem sollicitudin lacus.",
+      desc: "Kedirjenan ini memiliki fokus pada pengembangan website dan produk digital lainnya. Produk Digital memiliki fungsi pembuatan, pengembangan, dan juga pemeliharaan website yang menjadi fungsi utama dari Produk Digital. Website Andal, Software House Andalin, dan berbagai website kementrian BEM KM UGM merupakan hasil progam kerja dari Produk Digital.",
       members: [
         {
           name: "Member 1 Humas",
@@ -65,7 +65,7 @@ const KedirjenanPage = () => {
     {
       id: 1,
       title: "Media",
-      desc: "Media Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.  risus sem sollicitudin lacus.",
+      desc: "Fungsi utama dari Media pada Kementrian ANDAL ialah membuat, mengolah, serta menghasilkan segala produk visual desain dan juga berfungsi sebagai dokumentalis atau bagian yang mendokumentasi kegiatan Andal dalam bentuk foto maupun video. Segala bentuk desain baik dari website maupun media sosial merupakan produk yang dihasilkan oleh Media.",
       members: [
         {
           name: "Member 1 Media",
@@ -87,7 +87,7 @@ const KedirjenanPage = () => {
     {
       id: 2,
       title: "Personalia",
-      desc: "Personalia Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.  risus sem sollicitudin lacus.",
+      desc: "Memiliki fungsi yang berbeda dengan kedirjenan lainnya. Kedirjenan Personalia berfokus untuk menjamin kesejahteraan para anggota dan menciptakan ekosistem lingkungan kerja yang sehat. Didasarkan pada fungsinya untuk mengayomi seluruh anggota dan memastikan seluruh kedirjenan berjalan sesuai dengan tupoksi masing-masing, kedirjenan personalia bertugas untuk merealisasikan program kerja WALL OF FAME x Kementerian PSDM, Birthday Reminder, Pengolahan Data Anggota, serta Pengembangan Potensi Anggota.",
       members: [
         {
           name: "Member 1 Personalia",
@@ -109,7 +109,7 @@ const KedirjenanPage = () => {
     {
       id: 3,
       title: "Produk Digital",
-      desc: "Produk digital Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.  risus sem sollicitudin lacus.",
+      desc: "Kedirjenan ini memiliki fokus pada pengembangan website dan produk digital lainnya. Produk Digital memiliki fungsi pembuatan, pengembangan, dan juga pemeliharaan website yang menjadi fungsi utama dari Produk Digital. Website Andal, Software House Andalin, dan berbagai website kementrian BEM KM UGM merupakan hasil progam kerja dari Produk Digital.",
       members: [
         {
           name: "Member 1 Produk Digital",
@@ -141,7 +141,7 @@ const KedirjenanPage = () => {
     {
       id: 4,
       title: "Riset Data",
-      desc: "Riset Data Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.  risus sem sollicitudin lacus.",
+      desc: "Berfokus pada riset data yang akan terbagi dalam data analyst dan copywriter, kedirjenan ini akan memfasilitasi proses pengelolaan dan analisis data pada BEM KM UGM untuk mendukung pengambilan keputusan berbasis data. Kedirjenan Riset Data juga memiliki program unggulan GamaData serta turut serta dalam pengawalan isu di lingkup BEM KM UGM dan menerima adanya permintaan pengelolaan maupun analisis data dari Kementerian lain di BEM KM UGM.",
       members: [
         {
           name: "Member 1 Riset Data",
@@ -163,7 +163,7 @@ const KedirjenanPage = () => {
     {
       id: 5,
       title: "Riset Spasial",
-      desc: "Riset Spasial Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar.  risus sem sollicitudin lacus.",
+      desc: "Sesuai dengan penamaannya, kedirjenan ini berfokus pada riset dan kajian isu strategis berbasis spasial seperti pemetaan sehingga terbagi atas riset serta kajian dan mapper. Kedirjenan Riset Spasial memiliki program unggulan berupa GAMASPACE dengan output berupa postingan di Instagram selama satu bulan sekali yang sesuai dengan topik bulanan serta adanya kolaborasi dengan institusi atau NGO yang berkaitan dengan pemetaan dan isu strategis.",
       members: [
         {
           name: "Member 1 Riset Spasial",
@@ -194,7 +194,7 @@ const KedirjenanPage = () => {
         <title>{data?.title} | Andal 2023</title>
       </Head>
       <Navbar />
-      <KedirjenanHero kedirjenan={data} />
+      <KedirjenanHero data={kedirjenans} kedirjenan={data} />
       <Anggota kedirjenan={data} />
       <Footer />
     </>

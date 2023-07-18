@@ -224,7 +224,7 @@ const Navbar = () => {
                 </linearGradient>
               </defs>
             </svg>
-            <span className="hidden lg:inline-block font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#3076FF] to-[#0D2268]">
+            <span className="hidden lg:inline-block font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-b from-[#3076FF] to-[#0D2268]">
               Andal
             </span>
           </button>
@@ -258,7 +258,9 @@ const Navbar = () => {
             {kedirjenans.map((kedirjenan, i) => (
               <Link
                 key={i}
-                href={`/about/${kedirjenan.replace(/\s/g, "").toLowerCase()}`}
+                href={`/kedirjenan/${kedirjenan
+                  .replace(/\s/g, "")
+                  .toLowerCase()}`}
               >
                 <button
                   onClick={() => setShowKedirjenan(false)}
