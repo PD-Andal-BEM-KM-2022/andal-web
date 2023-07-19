@@ -473,7 +473,7 @@ const Card = ({
               <h2 className="font-extrabold text-4xl leading-none mb-4">
                 {archive.title}
               </h2>
-              <p className="font-medium text-justify pr-4 overflow-auto flex-1 max-h-[72vh]">
+              <p className="font-medium text-justify overflow-auto flex-1 max-h-[72vh]">
                 {archive.description}
               </p>
             </div>

@@ -4,7 +4,7 @@ import LeadBg from "../icons/LeadBg";
 const Lead = () => {
   return (
     <>
-      <section className="mt-28 px-10 mb-24 container mx-auto lg:grid lg:grid-cols-[1.3fr_0.7fr] relative lg:gap-x-10 overflow-x-clip overflow-y-visible ">
+      <section className="mt-28 px-10 mb-24 container mx-auto lg:grid lg:grid-cols-[1.3fr_0.7fr] relative lg:gap-x-12 overflow-x-clip overflow-y-visible ">
         <div className="flex relative justify-center lg:order-2 lg:flex lg:items-center mx-10 lg:mx-0">
           <Image
             src="/images/lead-n-bg.png"
@@ -18,12 +18,12 @@ const Lead = () => {
         </div>
         <div className="lg:flex lg:flex-col lg:justify-center relative z-10">
           <h2 className="text-[2rem] font-extrabold text-center leading-none mt-12 lg:text-5xl lg:text-start">
+            Ingin bekerja sama dengan{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-andal-orange to-andal-yellow">
-              Lorem ipsum{" "}
+              Andalin?
             </span>
-            dolor sit amet.
           </h2>
-          <p className="text-center text-andal-lightgrey mt-6 lg:text-start lg:text-xl">
+          <p className="text-justify text-andal-lightgrey mt-6 lg:text-xl">
             Andalin adalah software house (Perusahaan Penyedia Perangkat Lunak)
             yang beroperasi di bawah naungan BEM KM UGM. Andalin memiliki
             spesialisasi dalam pembuatan website dan layanan digital lainnya.

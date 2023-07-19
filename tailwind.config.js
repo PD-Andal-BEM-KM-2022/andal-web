@@ -19,6 +19,7 @@ module.exports = {
         "andal-darkblue": "#040D21",
         "andal-lightgrey": "#94A0B8",
         "andal-lightgreyblue": "#94A0B8",
+        "andal-darkgreyblue": "#4A5261",
         "andal-orange": "#C96E05",
         "andal-yellow": "#F1DC39",
         "andal-button-orange": "#F9B20B",

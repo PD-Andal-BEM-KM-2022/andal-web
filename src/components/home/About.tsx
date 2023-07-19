@@ -27,7 +27,7 @@ const About = () => {
               <h2 className="hidden lg:inline-block text-andal-darkblue lg:text-5xl font-extrabold mb-6">
                 About Andal
               </h2>
-              <p className="text-andal-darkblue text-ss lg:text-xl leading-tight text-justify max-h-[270px] overflow-auto pr-2 about-home lg:max-h-full">
+              <p className="text-andal-darkgreyblue text-ss lg:text-xl leading-tight text-justify max-h-[270px] overflow-auto pr-2 about-home lg:max-h-full">
                 Dengan berlatar belakang teknologi, Kementerian Analisis Data
                 dan Produk Digital menjadi garda terdepan BEM KM UGM 2023 dalam
                 bidang tersebut yang dielaborasikan dengan isu hangat pada
@@ -38,7 +38,7 @@ const About = () => {
               </p>
             </div>
             <Link href="/about">
-              <button className="text-ss font-medium text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg mx-auto block mt-4 lg:text-lg lg:mr-auto lg:ml-0">
+              <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg mx-auto block mt-4 lg:text-lg lg:mr-auto lg:ml-0">
                 Read More
               </button>
             </Link>
