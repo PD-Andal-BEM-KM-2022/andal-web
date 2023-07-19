@@ -43,3 +43,9 @@
   border-radius: 9999px;
   background-color: #f9b20b;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
