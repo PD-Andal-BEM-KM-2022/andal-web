@@ -1,39 +1,81 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { setInterval } from "timers";
+import ArchiveContent from "../archive/ArchiveContent";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import useSWR from "swr";
+import * as contentful from "contentful";
 
-import "swiper/css";
+const fetcher = async (url: string) => {
+  const client = contentful.createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID as string,
 
-import { Autoplay } from "swiper/modules";
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN as string,
+  });
+
+  const data = await client.getEntries({
+    content_type: "archieve",
+  });
+
+  return data.items.map((entry) => {
+    const fields = entry.fields as any;
+
+    return {
+      id: entry.sys.id,
+      title: fields.title,
+      description: fields.description,
+      date: fields.date,
+      initiator: fields.initiator.map((member: any) => member.fields),
+      pictures: fields.pictures.map((picture: any) => picture.fields),
+      thumbnail: fields.thumbnail.fields,
+    };
+  });
+};
 
 const Archive = () => {
   const [active, setActive] = useState(0);
+  const [showContent, setShowContent] = useState(-1);
 
-  const content = [
-    {
-      title: "Lorem Ipsum 1",
-      desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus.`,
-    },
-    {
-      title: "Lorem Ipsum 2",
-      desc: `Lorem ipsum dolor sit amet, consectetur eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus.`,
-    },
-    {
-      title: "Lorem Ipsum 3",
-      desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus.`,
-    },
-    {
-      title: "Lorem Ipsum 4",
-      desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus.`,
-    },
-  ];
+  const { data, error, isLoading } = useSWR("/api/archive", fetcher);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((active) => (active + 1) % 1);
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  useEffect(() => {
+    console.log(showContent);
+  }, [showContent]);
+
+  // const content = [
+  //   {
+  //     title: "Lorem Ipsum 1",
+  //     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus.`,
+  //   },
+  //   {
+  //     title: "Lorem Ipsum 2",
+  //     desc: `Lorem ipsum dolor sit amet, consectetur eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus.`,
+  //   },
+  //   {
+  //     title: "Lorem Ipsum 3",
+  //     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus.`,
+  //   },
+  //   {
+  //     title: "Lorem Ipsum 4",
+  //     desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus.`,
+  //   },
+  // ];
 
   return (
     <>
-      <section className="pt-12 overflow-x-clip overflow-y-visible relative z-10 lg:overflow-visible">
-        <div className="lg:flex lg:ml-4 lg:items-end relative z-10 ">
+      <section className="pt-12 overflow-x-clip overflow-y-visible relative md:overflow-visible md:container md:mx-auto z-[70]">
+        <div className="lg:flex lg:items-end relative z-10 lg:px-4">
           <h2 className="text-[2rem] font-extrabold text-center lg:text-5xl">
             Archive
           </h2>
@@ -42,62 +84,76 @@ const Archive = () => {
             kementrian Andal BEM KM UGM.
           </p>
         </div>
-        <Swiper
-          onActiveIndexChange={(i) => setActive(i.realIndex)}
-          initialSlide={0}
-          slidesPerView={1.2}
-          modules={[Autoplay]}
-          loop={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          breakpoints={{
-            640: {
-              loop: true,
-              slidesPerView: 2.2,
-              autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-              },
-            },
-            1024: {
-              loop: true,
-              slidesPerView: 3.2,
-              autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-              },
-            },
-            1280: {
-              loop: true,
-              slidesPerView: 4.2,
-              autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-              },
-            },
-          }}
-          className="flex duration-1000"
+        <div
+          className={`mt-6 relative z-10 flex justify-between h-[360px] w-[360vw] md:w-full md:h-[400px] duration-1000 px-3 ${
+            active == 1
+              ? "-translate-x-1/4 md:translate-x-0"
+              : active == 2
+              ? "-translate-x-2/4 md:translate-x-0"
+              : active == 3
+              ? "-translate-x-[calc(72.5%)] md:translate-x-0"
+              : ""
+            //  ""
+          }`}
         >
-          {content.map((content, i) => (
-            <SwiperSlide
-              key={i}
-              className={`duration-1000 ${
-                active == i ? "lg:flex-grow-[2]" : "lg:flex-shrink-[2]"
-              }`}
-            >
-              <Card
+          {data?.map((content: any, i: number) => (
+            <>
+              <div
                 key={i}
-                i={i}
-                content={content}
-                active={active}
-                setActive={setActive}
+                className={`p-2 bg-andal-lightblue rounded-lg relative duration-1000 w-full cursor-pointer ${
+                  i == active ? "" : "md:flex-shrink-[1.25]"
+                }
+              ${
+                i == 0 ? "ml-4 md:mr-2 md:ml-0" : i != 3 ? "mx-2" : "ml-2"
+              }               
+               `}
+                onClick={() => setShowContent(content.id)}
+                onMouseEnter={() => setActive(i)}
+              >
+                <Image
+                  src="/images/hero.png"
+                  width={0}
+                  height={0}
+                  sizes="100%"
+                  quality={100}
+                  alt=""
+                  className="w-full h-full object-cover rounded-lg"
+                />
+                <div
+                  className={`w-[calc(100%-40px)] h-[160px] flex flex-col items-start justify-start absolute bottom-5 left-1/2 -translate-x-1/2 overflow-hidden border-2 bg-andal-light border-andal-darkblue rounded-lg px-4 py-4 sm:py-5 md:max-h-[160px] md:h-auto ${
+                    active == i
+                      ? ""
+                      : "md:bg-andal-darkblue md:border-andal-light"
+                  }`}
+                >
+                  <h5
+                    className={`w-full font-extrabold text-andal-darkblue duration-1000 ${
+                      active == i
+                        ? "text-start"
+                        : "md:text-andal-lightblue text-center"
+                    }`}
+                  >
+                    {content.title}
+                  </h5>
+                  <p
+                    className={`leading-snug text-justify text-sm text-andal-darkgreyblue line-clamp-5 md:line-clamp-4 duration-1000 ${
+                      active == i ? "h-20 mt-1 sm:mt-2" : "h-0 m-0"
+                    }`}
+                  >
+                    {content.description}
+                  </p>
+                </div>
+              </div>
+
+              <ArchiveContent
+                archive={content}
+                showContent={showContent}
+                setShowContent={setShowContent}
               />
-            </SwiperSlide>
+            </>
           ))}
-        </Swiper>
-        <div className="flex justify-center mt-6 relative z-10">
+        </div>
+        <div className="flex justify-center mt-6">
           <Link href="/archive">
             <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg">
               More Archived
@@ -119,59 +175,3 @@ const Archive = () => {
 };
 
 export default Archive;
-
-const Card = ({
-  i,
-  content,
-  active,
-  setActive,
-}: {
-  i: number;
-  content: {
-    title: string;
-    desc: string;
-  };
-  active: number;
-  setActive: Dispatch<SetStateAction<number>>;
-}) => {
-  return (
-    <>
-      <div
-        className="relative h-[360px] lg:h-[400px] border-8 border-andal-lightblue mx-4 mt-6 rounded-2xl pb-9 overflow-hidden cursor-pointer duration-1000 bg-andal-darkblue"
-        onMouseEnter={() => setActive(i)}
-      >
-        <Image
-          src="/images/hero.png"
-          width={0}
-          height={0}
-          sizes="100%"
-          quality={100}
-          alt=""
-          className="w-full h-auto lg:h-full object-cover rounded-lg"
-        />
-        <div
-          className={`absolute w-[calc(100%-28px)] bottom-4 left-1/2 -translate-x-1/2 rounded-2xl px-5 py-4 border-[2px] overflow-hidden duration-500 ${
-            active == i
-              ? "bg-andal-light border-[#040D21]"
-              : "bg-[#040D21] border-light w-fit"
-          }`}
-        >
-          <h5
-            className={`font-extrabold leading-none duration-500 ${
-              active == i ? "text-andal-darkblue" : "text-center text-light"
-            }`}
-          >
-            {content.title}
-          </h5>
-          <p
-            className={`text-ss mt-2 text-justify text-andal-lightgreyblue leading-snug duration-500 line-clamp-4 ${
-              active == i ? "h-[5.5em]" : "h-0"
-            }`}
-          >
-            {content.desc}
-          </p>
-        </div>
-      </div>
-    </>
-  );
-};

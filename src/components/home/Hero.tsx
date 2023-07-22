@@ -46,6 +46,7 @@ const Hero = () => {
             height={0}
             sizes="100%"
             quality={100}
+            unoptimized
             className="w-full h-full object-cover rounded-xl"
           />
         </div>

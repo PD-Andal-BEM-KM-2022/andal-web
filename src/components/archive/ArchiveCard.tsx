@@ -1,13 +1,6 @@
 import dayjs from "dayjs";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
-import ArchiveCarousel from "./ArchiveCarousel";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-
-import { EffectCoverflow } from "swiper/modules";
 import ArchiveContent from "./ArchiveContent";
 
 const ArchiveCard = ({

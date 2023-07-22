@@ -1,12 +1,4 @@
-import {
-  Dispatch,
-  MouseEvent,
-  SetStateAction,
-  UIEvent,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { MouseEvent, useRef, useState } from "react";
 import ArchiveCard from "./ArchiveCard";
 
 const Archives = ({
