@@ -290,7 +290,7 @@ const Archives = ({
                     />
                   </svg>
                 </div>
-                <div className="text-center text-andal-lightgrey">
+                <div className="text-center text-andal-lightgreyblue">
                   <span className="text-5xl font-extrabold lg:text-6xl">
                     Sorry!
                   </span>

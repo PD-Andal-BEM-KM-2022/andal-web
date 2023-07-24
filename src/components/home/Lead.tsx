@@ -23,7 +23,7 @@ const Lead = () => {
               Andalin?
             </span>
           </h2>
-          <p className="text-justify text-andal-lightgrey mt-6 lg:text-xl">
+          <p className="text-justify text-andal-lightgreyblue mt-6 lg:text-xl">
             Andalin adalah software house (Perusahaan Penyedia Perangkat Lunak)
             yang beroperasi di bawah naungan BEM KM UGM. Andalin memiliki
             spesialisasi dalam pembuatan website dan layanan digital lainnya.
