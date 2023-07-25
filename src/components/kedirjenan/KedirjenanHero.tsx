@@ -6,33 +6,30 @@ const KedirjenanHero = ({
   data,
   kedirjenan,
 }: {
-  data: {
-    id: number;
-    title: string;
-    desc: string;
-    members: {
-      name: string;
-      image: string;
-      prodi: string;
-    }[];
-  }[];
+  data: any;
   kedirjenan?: {
     title: string;
     desc: string;
+    slug: string;
   };
 }) => {
-  const slug = kedirjenan?.title.replace(/\s/g, "").toLowerCase();
+  // const slug = kedirjenan?.title.replace(/\s/g, "").toLowerCase();
+
+  const slug = kedirjenan?.slug;
+
+  // console.log(data);
 
   let i = data
-    .map((e) => {
+    .map((e: any) => {
       return e.title;
     })
     .indexOf(kedirjenan?.title ?? "");
 
   const before = data[i - 1] ? data[i - 1] : data[data.length - 1];
   const after = data[i + 1] ? data[i + 1] : data[0];
-  const beforeSlug = before.title.replace(/\s/g, "").toLowerCase();
-  const afterSlug = after.title.replace(/\s/g, "").toLowerCase();
+
+  const beforeSlug = before.slug;
+  const afterSlug = after.slug;
 
   return (
     <>

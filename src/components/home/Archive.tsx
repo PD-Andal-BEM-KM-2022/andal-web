@@ -49,9 +49,9 @@ const Archive = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(showContent);
-  }, [showContent]);
+  // useEffect(() => {
+  //   console.log(showContent);
+  // }, [showContent]);
 
   // const content = [
   //   {

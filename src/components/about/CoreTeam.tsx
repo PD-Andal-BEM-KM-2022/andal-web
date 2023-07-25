@@ -8,40 +8,7 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import TeamCarousel from "../TeamCarousel";
 
-const CoreTeam = () => {
-  const coreTeams = [
-    {
-      name: "Anggit 'Best Staff' Ihsananto",
-      prodi: "Ilmu Komputer 2021",
-      image: "lead.png",
-      linkedin: "https://linkedin.com/in/anggit-ihsananto",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-      image: "hero.png",
-      linkedin: "/",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-      image: "hero.png",
-      linkedin: "/",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-      image: "hero.png",
-      linkedin: "/",
-    },
-    {
-      name: "Raden Restu Akbar Bagus Pratama",
-      prodi: "Ilmu Komputer 2021",
-      image: "hero.png",
-      linkedin: "/",
-    },
-  ];
-
+const CoreTeam = ({ data }: { data: any }) => {
   return (
     <>
       <section
@@ -53,7 +20,7 @@ const CoreTeam = () => {
           >
             Our Core Team
           </h3>
-          <TeamCarousel members={coreTeams} />
+          <TeamCarousel members={data} />
           <div
             className={`hidden lg:inline-block w-[1000px] h-[1000px] absolute top-0 -translate-y-[10%] left-0 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#072A79] via-transparent to-transparent duration-500`}
           ></div>

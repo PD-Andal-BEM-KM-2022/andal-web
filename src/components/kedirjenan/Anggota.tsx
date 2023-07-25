@@ -9,18 +9,7 @@ import { Autoplay } from "swiper/modules";
 import TeamCard from "../TeamCarousel";
 import TeamCarousel from "../TeamCarousel";
 
-const Anggota = ({
-  kedirjenan,
-}: {
-  kedirjenan?: {
-    title: string;
-    members: {
-      name: string;
-      image: string;
-      prodi: string;
-    }[];
-  };
-}) => {
+const Anggota = ({ data }: { data: any }) => {
   return (
     <>
       <style jsx>{`
@@ -50,9 +39,9 @@ const Anggota = ({
           <h3
             className={`font-extrabold flex justify-center text-center text-3xl py-16 lg:text-5xl`}
           >
-            Anggota Kedirjenan {kedirjenan?.title}
+            Anggota Kedirjenan {data.title}
           </h3>
-          <TeamCarousel members={kedirjenan?.members} />
+          <TeamCarousel members={data.members} />
 
           <div
             className={`hidden lg:inline-block w-[1000px] h-[1000px] absolute top-0 -translate-y-[10%] left-0 -translate-x-1/2 rounded-full bg-[radial-gradient(circle,_var(--tw-gradient-stops))] from-[#072A79] via-transparent to-transparent duration-500`}
