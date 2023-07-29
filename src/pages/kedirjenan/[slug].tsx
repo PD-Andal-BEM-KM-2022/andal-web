@@ -214,10 +214,13 @@ const KedirjenanPage = (props: any) => {
   //   return kedirjenan == data.title.replace(/\s/g, "").toLowerCase();
   // });
 
+  const title = props.title.replace(/(^\w{1})|(\s+\w{1})/g, (letter: string) =>
+    letter.toUpperCase()
+  );
   return (
     <>
       <Head>
-        <title>{props.title} | Andal 2023</title>
+        <title>{title} | Andal 2023</title>
       </Head>
       <Navbar />
       {data && (

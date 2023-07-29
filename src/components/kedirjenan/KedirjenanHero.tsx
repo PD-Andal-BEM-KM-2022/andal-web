@@ -60,7 +60,7 @@ const KedirjenanHero = ({
                   </svg>
                 </button>
               </Link>
-              <h2 className="capitalize text-center text-3xl font-extrabold px-12 lg:text-transparent lg:bg-clip-text lg:bg-gradient-to-r lg:from-andal-orange lg:to-andal-yellow lg:p-auto lg:text-6xl lg:col-span-2">
+              <h2 className="capitalize text-center text-3xl font-extrabold px-12 lg:w-full lg:text-transparent lg:bg-clip-text lg:bg-gradient-to-r lg:from-andal-orange lg:to-andal-yellow lg:p-auto lg:text-6xl lg:col-span-2">
                 Kedirjenan {kedirjenan?.title}
               </h2>
               <Link href={`/kedirjenan/${afterSlug}`} className="lg:hidden">
