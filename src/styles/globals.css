@@ -49,3 +49,27 @@
   height: 0px;
   display: none;
 }
+
+/* BUTTONS BG TRANSITION */
+.bg-button {
+  background-image: linear-gradient(
+    90deg,
+    #f9b20b,
+    #f9b20b,
+    #f9b20b,
+    #f1dc39,
+    #f1dc39,
+    #f1dc39
+  );
+  background-size: 400%;
+  background-position: left;
+  transition: background-position 300ms;
+}
+
+.bg-button:hover {
+  background-position: center;
+}
+
+.bg-button:active {
+  background-position: right;
+}

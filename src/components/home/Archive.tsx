@@ -155,7 +155,7 @@ const Archive = () => {
         </div>
         <div className="flex justify-center mt-6">
           <Link href="/archive">
-            <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg">
+            <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange/ bg-button px-6 py-2 rounded-lg">
               More Archived
             </button>
           </Link>

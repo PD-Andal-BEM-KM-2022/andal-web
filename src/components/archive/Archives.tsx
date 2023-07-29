@@ -64,6 +64,28 @@ const Archives = ({
 
   return (
     <>
+      <style jsx>{`
+        .bg-category {
+          background-image: linear-gradient(
+            90deg,
+            #040d21,
+            #040d21,
+            #040d21,
+            #040d21,
+            #042a7d,
+            #042a7d,
+            #042a7d,
+            #f9b20b
+          );
+          background-size: 400%;
+          background-position: left;
+          transition: background-position 300ms;
+        }
+
+        .bg-category:hover {
+          background-position: center;
+        }
+      `}</style>
       <section
         className={`bg-andal-darkblue -mt-7 py-16 rounded-t-3xl relative lg:px-14 xl:px-28`}
       >
@@ -200,10 +222,10 @@ const Archives = ({
               {kedirjenans.map((kedirjenan, i) => (
                 <button
                   key={i}
-                  className={`px-6 py-2 rounded-lg text-lg whitespace-nowrap duration-500 capitalize ${
+                  className={`px-6 py-2 font-semibold rounded-lg text-lg whitespace-nowrap duration-300 capitalize ${
                     selectedDirjen == kedirjenan
                       ? "bg-andal-button-orange text-andal-darkblue"
-                      : "bg-andal-darkblue"
+                      : "bg-category"
                   }`}
                   onClick={(e) => handleSelectDirjen(e)}
                 >

@@ -75,17 +75,18 @@ const ArchiveCarousel = () => {
           <div className="flex flex-col absolute top-1/2 -translate-y-1/2 right-0 z-10 items-center gap-y-[20em]">
             <div
               ref={prevRef}
-              className="w-8 h-8 flex items-center justify-center cursor-pointer -translate-x-1/3"
+              className="w-8 h-8 flex items-center justify-center cursor-pointer -translate-x-1/3 rounded-full active:bg-andal-yellow text-andal-darkblue hover:text-andal-yellow active:text-andal-darkblue"
             >
               <svg
                 width={17}
                 height={17}
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className="fill-current"
               >
                 <path
                   d="M8.5.925c-.133 0-.258.02-.375.062A.866.866 0 007.8 1.2L1.2 7.8c-.2.2-.3.437-.3.712 0 .275.1.512.3.713.2.2.434.3.7.3.267 0 .5-.1.7-.3l4.9-4.9v11.2c0 .283.096.517.288.7.192.183.43.275.712.275a.968.968 0 00.713-.288.964.964 0 00.287-.712V4.325l4.9 4.9c.2.2.434.3.7.3.267 0 .5-.1.7-.3.2-.2.3-.438.3-.713a.97.97 0 00-.3-.712L9.2 1.2a.883.883 0 00-.325-.213A1.083 1.083 0 008.5.925z"
-                  fill="#000"
+                  // fill="#000"
                 />
               </svg>
             </div>
@@ -97,18 +98,18 @@ const ArchiveCarousel = () => {
 
             <div
               ref={nextRef}
-              className="w-8 h-8 flex items-center justify-center cursor-pointer -translate-x-1/3"
+              className="w-8 h-8 flex items-center justify-center cursor-pointer -translate-x-1/3 rounded-full active:bg-andal-yellow text-andal-darkblue hover:text-andal-yellow active:text-andal-darkblue"
             >
               <svg
                 width={17}
                 height={17}
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                className="rotate-180"
+                className="rotate-180 fill-current"
               >
                 <path
                   d="M8.5.925c-.133 0-.258.02-.375.062A.866.866 0 007.8 1.2L1.2 7.8c-.2.2-.3.437-.3.712 0 .275.1.512.3.713.2.2.434.3.7.3.267 0 .5-.1.7-.3l4.9-4.9v11.2c0 .283.096.517.288.7.192.183.43.275.712.275a.968.968 0 00.713-.288.964.964 0 00.287-.712V4.325l4.9 4.9c.2.2.434.3.7.3.267 0 .5-.1.7-.3.2-.2.3-.438.3-.713a.97.97 0 00-.3-.712L9.2 1.2a.883.883 0 00-.325-.213A1.083 1.083 0 008.5.925z"
-                  fill="#000"
+                  // fill="#000"
                 />
               </svg>
             </div>

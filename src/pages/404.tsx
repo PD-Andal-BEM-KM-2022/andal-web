@@ -23,7 +23,7 @@ export default function Error404() {
             </p>
           </div>
           <Link href="/">
-            <button className="text-sm font-semibold bg-andal-button-orange py-2 px-6 rounded border border-andal-lightgreyblue lg:text-lg">
+            <button className="text-sm font-semibold bg-andal-button-orange/ bg-button py-2 px-6 rounded border border-andal-lightgreyblue lg:text-lg">
               Kembali ke Homepage
             </button>
           </Link>

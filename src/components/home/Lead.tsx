@@ -35,7 +35,7 @@ const Lead = () => {
             BSO di UGM dan UMKM dalam mengembangkan kehadiran online mereka dan
             mencapai tujuan bisnis mereka.
           </p>
-          <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange px-6 py-2 rounded-lg mx-auto block mt-4 lg:mr-auto lg:ml-0 lg:text-lg">
+          <button className="text-ss font-semibold text-andal-darkblue bg-andal-button-orange/ bg-button px-6 py-2 rounded-lg mx-auto block mt-4 lg:mr-auto lg:ml-0 lg:text-lg">
             Andalin Page
           </button>
         </div>
