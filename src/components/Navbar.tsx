@@ -31,12 +31,70 @@ const Navbar = () => {
   if (data)
     return (
       <>
+        <style jsx>{`
+          // ANDAL BUTTON
+          .bg-nav-state {
+            background: linear-gradient(
+              90deg,
+              #ccdae7,
+              #ccdae7,
+              #ccdae7,
+              #8e90f9,
+              #8e90f9,
+              #8e90f9
+            );
+            background-size: 400%;
+            background-position: left;
+            transition: background-position 300ms;
+          }
+
+          .bg-nav-state:hover {
+            background-position: center;
+          }
+
+          .bg-nav-state:active {
+            background-position: right;
+          }
+
+          // NAV MENU
+          .nav-btn-state {
+            background-clip: text;
+            background-image: linear-gradient(90deg, #041e58, #0630ba);
+            background-size: 400%;
+            background-position: left;
+            transition: background-position 300ms;
+          }
+
+          .nav-btn-state:hover {
+            background-position: center;
+          }
+
+          .nav-btn-state::after {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #041e58, #0630ba);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: 300ms;
+          }
+
+          .nav-btn-state:nth-child(2)::after {
+            bottom: 0.75em;
+          }
+
+          .nav-btn-state:hover::after {
+            width: 100%;
+          }
+        `}</style>
         <nav className="flex justify-between fixed z-50 w-full p-6 lg:grid lg:grid-cols-[0.8fr_1.2fr_0.8fr]">
           {/* MOBILE NAVBAR BUTTONS */}
           <Link href="/" className="h-fit">
             <button
               type="button"
-              className={`bg-andal-lightblue rounded-full p-1 border-t border-andal-lightgreyblue w-8 h-8 flex items-center justify-center shadow-md lg:w-auto lg:h-auto lg:px-6 lg:py-3 lg:gap-x-1 duration-1000 ${
+              className={`rounded-full p-1 border-t border-andal-lightgreyblue w-8 h-8 flex items-center justify-center shadow-md lg:w-auto lg:h-auto lg:px-6 lg:py-3 lg:gap-x-1 duration-1000 bg-nav-state ${
                 navMenu ? "-translate-y-[200%]" : ""
               }`}
             >
@@ -249,14 +307,14 @@ const Navbar = () => {
           {/* DESKTOP NAVBAR BUTTONS */}
           <div className="hidden lg:flex items-center justify-center rounded-full bg-andal-lightblue w-fit py-3 px-10 gap-x-7 shadow-md mx-auto relative z-10 border-t border-andal-lightgreyblue">
             <Link href="/about">
-              <button className="text-andal-darkblue font-medium">
+              <button className="font-semibold text-transparent nav-btn-state relative">
                 About Us
               </button>
             </Link>
             <button
               onMouseOver={() => setShowKedirjenan(true)}
               onMouseLeave={() => setShowKedirjenan(false)}
-              className="text-andal-darkblue font-medium h-[150%]"
+              className="font-semibold text-transparent nav-btn-state relative h-[150%]"
             >
               Kedirjenan
             </button>
@@ -280,7 +338,7 @@ const Navbar = () => {
                 >
                   <button
                     onClick={() => setShowKedirjenan(false)}
-                    className="capitalize text-andal-darkblue whitespace-nowrap"
+                    className="capitalize text-andal-darkblue whitespace-nowrap font-semibold"
                     onMouseOver={() => setShowKedirjenan(true)}
                     onMouseLeave={() => setShowKedirjenan(false)}
                   >
@@ -290,7 +348,7 @@ const Navbar = () => {
               ))}
             </div>
             <Link href="/archive">
-              <button className="text-andal-darkblue font-medium">
+              <button className="font-semibold text-transparent nav-btn-state relative">
                 Archive
               </button>
             </Link>
