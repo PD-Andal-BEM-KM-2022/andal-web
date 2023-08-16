@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="relative z-10">
           <h1 className="text-2xl text-center font-extrabold text-andal-lightblue mx-auto lg:text-6xl">
             <p className="w-[70%] mx-auto tracking-tighter leading-tight">
-              Kementrian Analisis Data dan Produk Digital
+              Kementerian Analisis Data dan Produk Digital
             </p>
             <p className="block text-transparent bg-clip-text bg-gradient-to-r from-andal-orange to-andal-yellow tracking-tighter">
               BEM KM UGM 2023
